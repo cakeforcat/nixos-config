@@ -226,6 +226,7 @@
       enable = true;
       package = pkgs.gitFull;
     };
+    # gpg
     gnupg.agent.enable = true;
     # neovim
     neovim = {
@@ -239,6 +240,14 @@
     };
     # direnv
     direnv.enable = true;
+    # yet-another-nix-helper (nh)
+    nh = {
+      enable = true;
+      # clean = {
+      #   enable = true;
+      #   extraArgs = "--keep-since 4d --keep 3";
+      # };
+    };
     # shell config
     fish = {
       enable = true;
