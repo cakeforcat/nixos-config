@@ -1,6 +1,11 @@
 #!/usr/bin/env fish
 # A rebuild script that commits on a successful build
 # the approach for tracking the nixos configuration files I use is symlinking
+# sources:
+# https://gist.github.com/0atman/1a5133b842f929ba4c1e195ee67599d5
+# https://nixos-and-flakes.thiscute.world/nixos-with-flakes/other-useful-tips#managing-the-configuration-with-git
+# https://github.com/JustCoderdev/dotfiles/blob/nixos-compliant/nixos/modules/system/bin/rebuild-system/rebuild-system.sh
+# https://stackoverflow.com/questions/11023929/using-the-alternate-screen-in-a-bash-script
 
 # some script arguments
 set -l options (fish_opt -s h -l help)
