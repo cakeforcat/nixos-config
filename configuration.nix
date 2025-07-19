@@ -1,12 +1,12 @@
-{ config, pkgs, ... }:
-
 {
-  imports =
-    [
-      <nixos-hardware/lenovo/legion/15arh05h>
-      ./hardware-configuration.nix
-    ];
-
+  config,
+  pkgs,
+  ...
+}: {
+  imports = [
+    <nixos-hardware/lenovo/legion/15arh05h>
+    ./hardware-configuration.nix
+  ];
 
   nixpkgs.config = {
     packageOverrides = pkgs: {
@@ -18,24 +18,22 @@
     allowUnfree = true;
   };
 
-
   # Boot
   boot = {
     # Bootloader
     loader = {
-     systemd-boot.enable = true;
-     efi.canTouchEfiVariables = true;
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
     };
     # Kernel
     kernelPackages = pkgs.linuxPackages_latest;
     # Kernel modules
-    extraModulePackages = with config.boot.kernelPackages; [ lenovo-legion-module ];
+    extraModulePackages = with config.boot.kernelPackages; [lenovo-legion-module];
     kernelModules = [
       "ntsync"
       "lenovo-legion-module"
     ];
   };
-
 
   networking = {
     hostName = "Laptopiszcze"; # Define your hostname.
@@ -47,7 +45,6 @@
       ];
     };
   };
-
 
   # Set your time zone.
   time.timeZone = "Europe/London";
@@ -71,17 +68,15 @@
   # Configure console keymap
   console.keyMap = "pl2";
 
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.julia = {
     isNormalUser = true;
     description = "Julia";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [
-    #  thunderbird
+      #  thunderbird
     ];
   };
-
 
   # global env variables
   environment.variables = {
@@ -91,75 +86,88 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  lenovo-legion # remember the kernel module !
-  git-credential-oauth
-  vpnc
-  wget
-  turtle
-  devenv
-  hyfetch
-  fastfetch
-  ghostty
-  fish
-  bottom
-  hunt
-  ripgrep
-  fastfetch
-  python314
-  uv
-  (vscode-with-extensions.override {
-    vscode = vscodium;
-    vscodeExtensions = with pkgs.vscode-extensions; [
-      ms-python.python
-      ms-python.debugpy
-      charliermarsh.ruff
-      github.copilot
-      github.copilot-chat
-      grapecity.gc-excelviewer
-      bbenoist.nix
-      ms-python.vscode-pylance
-      ];
-  })
-  bitwarden-desktop
-  gnome-browser-connector
-  wl-clipboard
-  protonup-qt
-  nvtopPackages.full
-  discord
-  jellyfin
-  jellyfin-web
-  jellyfin-ffmpeg
-  qbittorrent
-  smile
-  starship
-  fragments
-  kicad
-  prismlauncher
-  mangohud
-  mangojuice
-  google-chrome
+    lenovo-legion # remember the kernel module !
+    git-credential-oauth
+    vpnc
+    wget
+    turtle
+    devenv
+    hyfetch
+    fastfetch
+    ghostty
+    fish
+    bottom
+    hunt
+    ripgrep
+    fastfetch
+    python314
+    uv
+    fish-lsp
+    (vscode-with-extensions.override {
+      vscode = vscodium;
+      vscodeExtensions = with pkgs.vscode-extensions;
+        [
+          ms-python.python
+          ms-python.debugpy
+          charliermarsh.ruff
+          github.copilot
+          github.copilot-chat
+          grapecity.gc-excelviewer
+          bbenoist.nix
+          ms-python.vscode-pylance
+        ]
+        ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+          {
+            name = "fish-lsp";
+            publisher = "ndonfris";
+            version = "0.1.7";
+            sha256 = "xEqstBvz9EDd5FMjfY7dynFNw2angDNZcWIr06Uguw4=";
+          }
+        ];
+    })
+    bitwarden-desktop
+    gnome-browser-connector
+    wl-clipboard
+    protonup-qt
+    nvtopPackages.full
+    discord
+    jellyfin
+    jellyfin-web
+    jellyfin-ffmpeg
+    qbittorrent
+    smile
+    starship
+    fragments
+    kicad
+    prismlauncher
+    mangohud
+    mangojuice
 
-  libreoffice-fresh
-  hunspell
-  hunspellDicts.en_GB-ise
-  hunspellDicts.pl_PL
+    alejandra
+    libnotify
+    jq
 
-  gnome-tweaks
-  adw-gtk3
-  gnomeExtensions.wallpaper-slideshow
-  gnomeExtensions.just-perfection
-  gnomeExtensions.clipboard-indicator
-  gnomeExtensions.fullscreen-avoider
-  gnomeExtensions.vitals
-  gnomeExtensions.removable-drive-menu
-  gnomeExtensions.appindicator
-  gnomeExtensions.gsconnect
-  gnomeExtensions.power-profile-indicator-2
-  gnomeExtensions.smile-complementary-extension
+    libreoffice-fresh
+    hunspell
+    hunspellDicts.en_GB-ise
+    hunspellDicts.pl_PL
 
-  unstable.mission-center
+    gnome-tweaks
+    adw-gtk3
+    gnomeExtensions.wallpaper-slideshow
+    gnomeExtensions.just-perfection
+    gnomeExtensions.clipboard-indicator
+    gnomeExtensions.fullscreen-avoider
+    gnomeExtensions.vitals
+    gnomeExtensions.removable-drive-menu
+    gnomeExtensions.appindicator
+    gnomeExtensions.gsconnect
+    gnomeExtensions.power-profile-indicator-2
+    gnomeExtensions.smile-complementary-extension
+
+    unstable.mission-center
   ];
-  
+
   security.rtkit.enable = true;
   # builtin services derivations
   services = {
@@ -178,7 +186,7 @@
 
     # Enable CUPS to print documents.
     # printing.enable = true;
-    
+
     # Enable sound with pipewire.
     pulseaudio.enable = false;
     pipewire = {
@@ -189,7 +197,7 @@
     };
 
     # tray icons
-    udev.packages = [ pkgs.gnome-settings-daemon ];
+    udev.packages = [pkgs.gnome-settings-daemon];
     # flatpak for the odd ones out
     flatpak.enable = true;
     # jellyfin
@@ -206,12 +214,12 @@
     # steam
     steam = {
       enable = true;
-      extraCompatPackages = [ pkgs.proton-ge-bin ];
+      extraCompatPackages = [pkgs.proton-ge-bin];
     };
     # GSConnect
     kdeconnect = {
       enable = true;
-      package = pkgs.gnomeExtensions.gsconnect; 
+      package = pkgs.gnomeExtensions.gsconnect;
     };
     # git and github
     git = {
@@ -225,7 +233,7 @@
       defaultEditor = true;
       configure = {
         packages.myVimPackage = with pkgs.vimPlugins; {
-          start = [ gruvbox-nvim ];
+          start = [gruvbox-nvim];
         };
       };
     };
@@ -361,7 +369,6 @@
       };
     };
   };
-
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
