@@ -231,11 +231,11 @@
     neovim = {
       enable = true;
       defaultEditor = true;
-      configure = {
-        packages.myVimPackage = with pkgs.vimPlugins; {
-          start = [gruvbox-nvim];
-        };
-      };
+      # configure = {
+      #  packages.myVimPackage = with pkgs.vimPlugins; {
+      #    start = [gruvbox-nvim];
+      #  };
+      # };
     };
     # direnv
     direnv.enable = true;
@@ -249,7 +249,7 @@
       shellAliases = {
         econf = "nvim ~/nixos-config/configuration.nix";
         ehwconf = "nvim ~/nixos-config/hardware-configuration.nix";
-        nixit = "sudo nixos-rebuild switch";
+        nixit = "source ~/nixos-config/holy-mother-of-scripts.fish";
         nix-fish = "nix-shell --command fish";
       };
     };
