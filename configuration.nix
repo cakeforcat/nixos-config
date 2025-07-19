@@ -239,8 +239,8 @@
         starship init fish | source
       '';
       shellAliases = {
-        econf = "EDITOR=nvim sudo -e /etc/nixos/configuration.nix";
-        ehwconf = "EDITOR=nvim sudo -e /etc/nixos/hardware-configuration.nix";
+        econf = "nvim ~/nixos-config/configuration.nix";
+        ehwconf = "nvim ~/nixos-config/hardware-configuration.nix";
         nixit = "sudo nixos-rebuild switch";
         nix-fish = "nix-shell --command fish";
       };
