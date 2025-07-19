@@ -6,6 +6,13 @@
 # https://nixos-and-flakes.thiscute.world/nixos-with-flakes/other-useful-tips#managing-the-configuration-with-git
 # https://github.com/JustCoderdev/dotfiles/blob/nixos-compliant/nixos/modules/system/bin/rebuild-system/rebuild-system.sh
 # https://stackoverflow.com/questions/11023929/using-the-alternate-screen-in-a-bash-script
+# dependencies:
+# - fish
+# - git
+# - jq (for parsing JSON)
+# - alejandra (for nix autoformatting)
+# - notify-send (for notifications)
+# - ripgrep (for checking rebuild log)
 
 # some script arguments
 set -l options (fish_opt -s h -l help)
