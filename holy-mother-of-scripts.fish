@@ -51,6 +51,9 @@ if set -q _flag_update
     sudo nix-channel --update
 end
 
+# go to config root
+pushd ~/nixos-config/
+
 # handle edit flag
 if set -q _flag_edit
     if not test -f "configuration.nix"
@@ -59,9 +62,6 @@ if set -q _flag_edit
     end
     $EDITOR configuration.nix
 end
-
-# go to config root
-pushd ~/nixos-config/
 
 # Early return if no changes were detected (thanks @singiamtel!)
 if not git diff --quiet '*.nix'
