@@ -62,7 +62,7 @@
     # protonup-qt
     nvtopPackages.full
     warp
-
+    vesktop
     discord
     jellyfin
     jellyfin-web
