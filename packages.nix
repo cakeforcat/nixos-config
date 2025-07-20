@@ -64,6 +64,8 @@
     warp
     vesktop
     discord
+    fractal
+
     jellyfin
     jellyfin-web
     jellyfin-ffmpeg
