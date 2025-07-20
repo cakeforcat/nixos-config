@@ -20,6 +20,7 @@ set options $options (fish_opt -o -s e -l edit)
 set options $options (fish_opt -s b -l boot)
 set options $options (fish_opt -s u -l update)
 set options $options (fish_opt -s p -l push)
+set options $options (fish_opt -s f -l force)
 
 
 argparse --exclusive "boot,push" $options -- $argv
@@ -51,6 +52,7 @@ if set -q _flag_help
     echo "  -b,       --boot          Rebuild and switch at next boot"
     echo "  -u,       --update        Update NixOS channels before rebuilding"
     echo "  -p,       --push          Push changes to remote repository (if successful)"
+    echo "  -f,       --force         Force rebuild even if no changes detected"
     echo ""
     echo "for safety boot and push are mutually exclusive"
     echo "If you want to push changes, use the --push flag after a successful reboot."
@@ -83,6 +85,8 @@ if not git diff --quiet '*.nix'
     echo "Changes detected, proceeding with rebuild."
 else if set -q _flag_update
     echo "No changes detected, but channels updated, proceeding with rebuild."
+else if set -q _flag_force
+    echo "No changes detected, but force rebuild requested."
 else if set -q _flag_push 
     echo "No changes detected, no channels updated, but push requested"
     push_to_remote
