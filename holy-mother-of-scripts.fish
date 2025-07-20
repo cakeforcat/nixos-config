@@ -128,9 +128,14 @@ if rg --quiet error rebuild.log
 end
 
 echo "Rebuild successful, committing changes..."
-set -l current (nixos-rebuild list-generations --json | jq '.[] | select (.current == true) | "\(.generation) \(.date) \(.nixosVersion) \(.kernelVersion)"')
+set -l curr_json (nixos-rebuild list-generations --json | jq -r '.[] | select (.current == true)')
+set -l curr_generation (echo $json | jq -r '"\(.generation)"')
+set -l curr_date (echo $json | jq -r '"\(.date)"')
+set -l curr_nixos (echo $json | jq -r '"\(.nixosVersion)"')
+set -la curr_nixos_major (echo $curr_nixos | string split -f "1" -m1 2 -rf .)
+set -l curr_kernel (echo $json | jq -r '"\(.kernelVersion)"')
 git add *.nix
-git commit -m "$current"
+git commit -m "Gen: $curr_generation NixOS: $curr_nixos_major Kernel: $curr_kernel"
 echo "Changes committed successfully."
 
 # handle push flag
