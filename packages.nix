@@ -20,7 +20,8 @@
     git-credential-oauth
     vpnc
     wget
-    turtle
+    # turtle # broken rn
+    gitui
     devenv
     hyfetch
     fastfetch
@@ -58,12 +59,14 @@
     bitwarden-desktop
     gnome-browser-connector
     wl-clipboard
-    protonup-qt
+    # protonup-qt
     nvtopPackages.full
+
     discord
     jellyfin
     jellyfin-web
     jellyfin-ffmpeg
+
     qbittorrent
     smile
     starship
