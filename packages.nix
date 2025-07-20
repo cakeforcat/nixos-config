@@ -61,6 +61,7 @@
     wl-clipboard
     # protonup-qt
     nvtopPackages.full
+    warp
 
     discord
     jellyfin
