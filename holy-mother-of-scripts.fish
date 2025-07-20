@@ -16,7 +16,7 @@
 
 # some script arguments
 set -l options (fish_opt -s h -l help)
-set options $options (fish_opt -s e -l edit)
+set options $options (fish_opt -o -s e -l edit)
 set options $options (fish_opt -s b -l boot)
 set options $options (fish_opt -s u -l update)
 set options $options (fish_opt -s p -l push)
@@ -46,11 +46,11 @@ if set -q _flag_help
     echo "A script to rebuild NixOS configuration and commit changes."
     echo ""
     echo "Options:"
-    echo "  -h, --help     Show this help message"
-    echo "  -e, --edit     Edit the configuration file"
-    echo "  -b, --boot     Rebuild and switch at next boot"
-    echo "  -u, --update   Update NixOS channels before rebuilding"
-    echo "  -p, --push     Push changes to remote repository (if successful)"
+    echo "  -h,       --help          Show this help message"
+    echo "  -e[FILE], --edit[=FILE]   Edit a configuration file (configuration.nix by default)"
+    echo "  -b,       --boot          Rebuild and switch at next boot"
+    echo "  -u,       --update        Update NixOS channels before rebuilding"
+    echo "  -p,       --push          Push changes to remote repository (if successful)"
     echo ""
     echo "for safety boot and push are mutually exclusive"
     echo "If you want to push changes, use the --push flag after a successful reboot."
@@ -68,11 +68,14 @@ pushd ~/nixos-config/
 
 # handle edit flag
 if set -q _flag_edit
-    if not test -f "configuration.nix"
-        echo "Error: configuration.nix not found."
-        return 1
+    if set -q _flag_edit[1]
+        if not test -f $_flag_edit
+            exit_with_notification "File $_flag_edit does not exist."
+        end
+        $EDITOR $_flag_edit
+    else
+        $EDITOR configuration.nix
     end
-    $EDITOR configuration.nix
 end
 
 # Early return if no changes were detected (thanks @singiamtel!)
@@ -132,7 +135,7 @@ set -l curr_json (nixos-rebuild list-generations --json | jq -r '.[] | select (.
 set -l curr_generation (echo $json | jq -r '"\(.generation)"')
 set -l curr_date (echo $json | jq -r '"\(.date)"')
 set -l curr_nixos (echo $json | jq -r '"\(.nixosVersion)"')
-set -la curr_nixos_major (echo $curr_nixos | string split -f "1" -m1 2 -rf .)
+set -la curr_nixos_major (echo $curr_nixos | string split -f "1" -m1 2 -r .)
 set -l curr_kernel (echo $json | jq -r '"\(.kernelVersion)"')
 git add *.nix
 git commit -m "Gen: $curr_generation NixOS: $curr_nixos_major Kernel: $curr_kernel"
