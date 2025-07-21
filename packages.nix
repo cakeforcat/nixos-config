@@ -46,6 +46,7 @@
           grapecity.gc-excelviewer
           bbenoist.nix
           ms-python.vscode-pylance
+          vscode-extensions.myriad-dreamin.tinymist
         ]
         ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
           {
