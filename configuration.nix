@@ -4,7 +4,7 @@
   ...
 }: {
   imports = [
-    /home/julia/github/nixos-hardware/lenovo/legion/15arh05h/default.nix
+    ./nixos-hardware/lenovo/legion/15arh05h/default.nix
     ./hardware-configuration.nix
     ./packages.nix
     ./builtin-programs.nix
