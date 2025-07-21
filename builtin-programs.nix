@@ -10,7 +10,7 @@
     # steam
     steam = {
       enable = true;
-      extraCompatPackages = [pkgs.proton-ge-bin];
+      extraCompatPackages = [pkgs.unstable.proton-ge-bin];
     };
     # GSConnect
     kdeconnect = {

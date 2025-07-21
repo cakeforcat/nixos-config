@@ -26,7 +26,7 @@
     extraModulePackages = with config.boot.kernelPackages; [lenovo-legion-module];
     kernelModules = [
       "ntsync"
-      "lenovo-legion-module"
+      #"lenovo-legion-module"
     ];
   };
 
