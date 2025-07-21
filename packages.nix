@@ -31,8 +31,6 @@
     hunt
     ripgrep
     fastfetch
-    python314
-    uv
     fish-lsp
     (vscode-with-extensions.override {
       vscode = vscodium;
