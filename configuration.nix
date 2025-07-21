@@ -10,6 +10,7 @@
     ./builtin-programs.nix
     ./builtin-services.nix
     ./shell.nix
+    ./udev-rules.nix
   ];
 
   # Boot
