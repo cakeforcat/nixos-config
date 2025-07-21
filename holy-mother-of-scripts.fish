@@ -99,7 +99,7 @@ else
 end
 
 # autoformat nix files
-if not alejandra -q .
+if not alejandra -q *.nix # noooo dont touch my submodules
     popd
     exit_with_notification "Alejandra formatting failed, exiting."
 end
