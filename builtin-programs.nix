@@ -23,7 +23,13 @@
       package = pkgs.gitFull;
     };
     # gpg
-    gnupg.agent.enable = true;
+    gnupg.agent = {
+      enable = true;
+      settings = {
+        default-cache-ttl = 28800; # 8 hours
+        max-cache-ttl = 28800; # 8 hours
+      };
+    };
     # neovim
     neovim = {
       enable = true;
