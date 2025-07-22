@@ -46,6 +46,7 @@
           ms-python.vscode-pylance
           myriad-dreamin.tinymist
           mkhl.direnv
+          platformio.platformio-vscode-ide
         ]
         ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
           {
