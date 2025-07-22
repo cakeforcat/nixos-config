@@ -47,7 +47,7 @@
           myriad-dreamin.tinymist
           mkhl.direnv
           platformio.platformio-vscode-ide
-          ms-vscode.cpptools-extension-pack
+          ms-vscode.cpptools
         ]
         ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
           {
