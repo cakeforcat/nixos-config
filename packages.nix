@@ -32,7 +32,7 @@
     ripgrep
     fastfetch
     fish-lsp
-    platformio
+    wlink
     (vscode-with-extensions.override {
       vscode = vscodium;
       vscodeExtensions = with pkgs.vscode-extensions;
