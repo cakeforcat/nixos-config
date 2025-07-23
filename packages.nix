@@ -34,7 +34,6 @@
     fish-lsp
     wlink
     gnome-firmware
-    fwupd
     (vscode-with-extensions.override {
       vscode = vscodium;
       vscodeExtensions = with pkgs.vscode-extensions;

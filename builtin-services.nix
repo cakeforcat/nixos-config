@@ -40,5 +40,7 @@
       enable = true;
       openFirewall = true;
     };
+    # fwupd
+    fwupd.enable = true;
   };
 }
