@@ -33,6 +33,7 @@
     fastfetch
     fish-lsp
     wlink
+    gnome-firmware
     (vscode-with-extensions.override {
       vscode = vscodium;
       vscodeExtensions = with pkgs.vscode-extensions;
