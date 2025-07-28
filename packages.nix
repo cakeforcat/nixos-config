@@ -34,6 +34,7 @@
     fish-lsp
     wlink
     gnome-firmware
+    unstable.sherlock-launcher
     (vscode-with-extensions.override {
       vscode = vscodium;
       vscodeExtensions = with pkgs.vscode-extensions;

@@ -16,6 +16,9 @@
         ehwconf = "nvim ~/nixos-config/hardware-configuration.nix";
         nixit = "source ~/nixos-config/holy-mother-of-scripts.fish";
         nix-fish = "nix-shell --command fish";
+        jellit = "sudo systemctl start jellyfin";
+        jellout = "sudo systemctl stop jellyfin";
+        jellwhat = "sudo systemctl status jellyfin";
       };
     };
     starship = {
