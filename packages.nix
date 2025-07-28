@@ -48,6 +48,7 @@
           ms-python.vscode-pylance
           myriad-dreamin.tinymist
           mkhl.direnv
+          tamasfe.even-better-toml
         ]
         ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
           {
