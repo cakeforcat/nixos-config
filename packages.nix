@@ -35,6 +35,7 @@
     wlink
     gnome-firmware
     unstable.sherlock-launcher
+    freecad
     (vscode-with-extensions.override {
       vscode = vscodium;
       vscodeExtensions = with pkgs.vscode-extensions;
