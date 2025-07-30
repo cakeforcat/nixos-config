@@ -38,6 +38,7 @@
     fish
     bottom
     hunt
+    fd
     ripgrep
     fastfetch
     fish-lsp
@@ -87,9 +88,9 @@
     qbittorrent
     smile
     starship
-    fragments
     kicad
     prismlauncher
+    zulu24
     mangohud
     mangojuice
 
