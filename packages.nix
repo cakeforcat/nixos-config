@@ -8,6 +8,15 @@
       unstable = import <unstable> {
         config = config.nixpkgs.config;
       };
+      vpncpin =
+        import (builtins.fetchGit {
+          name = "vpnc-plugin-old-pin";
+          url = "https://github.com/NixOS/nixpkgs/";
+          ref = "refs/heads/nixos-25.05";
+          rev = "59133ee770406f605d61698bc4f1a89efcf461d5";
+        }) {
+          config = config.nixpkgs.config;
+        };
     };
     # Allow unfree packages
     allowUnfree = true;

@@ -40,7 +40,7 @@
     networkmanager = {
       enable = true;
       plugins = with pkgs; [
-        networkmanager-vpnc
+        vpncpin.networkmanager-vpnc
       ];
     };
   };
