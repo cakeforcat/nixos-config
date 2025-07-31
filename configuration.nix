@@ -11,6 +11,7 @@
     ./builtin-services.nix
     ./shell.nix
     #./minichlink-udev.nix
+    ./vm.nix
   ];
 
   # extra nix settings
@@ -71,7 +72,7 @@
   users.users.julia = {
     isNormalUser = true;
     description = "Julia";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = ["networkmanager" "wheel" "libvirtd"];
     packages = with pkgs; [
       #  thunderbird
     ];
