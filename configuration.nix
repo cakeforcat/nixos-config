@@ -16,6 +16,7 @@
 
   # extra nix settings
   nix.settings.trusted-users = ["root" "julia"];
+  system.rebuild.enableNg = true;
 
   # Boot
   boot = {
