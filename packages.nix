@@ -115,6 +115,7 @@
     gnomeExtensions.gsconnect
     gnomeExtensions.power-profile-indicator-2
     gnomeExtensions.smile-complementary-extension
+    gnomeExtensions.touchpad-gesture-customization
 
     unstable.mission-center
   ];
