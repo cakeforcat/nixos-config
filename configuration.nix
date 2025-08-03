@@ -26,7 +26,7 @@
       efi.canTouchEfiVariables = true;
     };
     # Kernel
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_6_15;
     # Kernel modules
     extraModulePackages = with config.boot.kernelPackages; [lenovo-legion-module];
     kernelModules = [
