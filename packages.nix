@@ -44,7 +44,6 @@
     fish-lsp
     wlink
     gnome-firmware
-    unstable.sherlock-launcher
     freecad
     (vscode-with-extensions.override {
       vscode = vscodium;
