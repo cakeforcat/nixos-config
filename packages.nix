@@ -56,6 +56,8 @@
           github.copilot-chat
           grapecity.gc-excelviewer
           bbenoist.nix
+          jeff-hykin.better-nix-syntax
+          emroussel.atomize-atom-one-dark-theme
           ms-python.vscode-pylance
           myriad-dreamin.tinymist
           mkhl.direnv
