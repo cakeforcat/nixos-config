@@ -6,6 +6,7 @@
   imports = [
     ./nixos-hardware/lenovo/legion/15arh05h/default.nix
     ./hardware-configuration.nix
+    ./pinning.nix
     ./packages.nix
     ./builtin-programs.nix
     ./builtin-services.nix
