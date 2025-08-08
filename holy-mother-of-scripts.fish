@@ -13,6 +13,12 @@
 # - alejandra (for nix autoformatting)
 # - notify-send (for notifications)
 # - ripgrep (for checking rebuild log)
+#
+# hello npins!
+# https://github.com/andir/npins
+# https://jade.fyi/blog/pinning-nixos-with-npins/
+# https://piegames.de/dumps/pinning-nixos-with-npins-revisited/
+# https://discourse.nixos.org/t/pinning-nixos-with-npins/63721/10
 
 # some script arguments
 set -l options (fish_opt -s h -l help)
@@ -50,7 +56,7 @@ if set -q _flag_help
     echo "  -h,       --help          Show this help message"
     echo "  -e[FILE], --edit[=FILE]   Edit a configuration file (configuration.nix by default)"
     echo "  -b,       --boot          Rebuild and switch at next boot"
-    echo "  -u,       --update        Update NixOS channels before rebuilding"
+    echo "  -u,       --update        Update (n)pins"
     echo "  -p,       --push          Push changes to remote repository (if successful)"
     echo "  -f,       --force         Force rebuild even if no changes detected"
     echo ""
@@ -61,8 +67,8 @@ end
 
 # handle update flag
 if set -q _flag_update
-    echo "Updating NixOS channels..."
-    sudo nix-channel --update
+    echo "Updating npins"
+    npins update
 end
 
 # go to config root
@@ -80,15 +86,15 @@ if set -q _flag_edit
     end
 end
 
-# Early return if no changes were detected (thanks @singiamtel!)
+# Early return if no changes were detected
 if not git diff --quiet '*.nix'
     echo "Changes detected, proceeding with rebuild."
 else if set -q _flag_update
-    echo "No changes detected, but channels updated, proceeding with rebuild."
+    echo "No changes detected, but pins updated, proceeding with rebuild."
 else if set -q _flag_force
     echo "No changes detected, but force rebuild requested."
 else if set -q _flag_push 
-    echo "No changes detected, no channels updated, but push requested"
+    echo "No changes detected, no pins updated, but push requested"
     push_to_remote
     popd
     return 0
@@ -111,11 +117,13 @@ git diff -U0 '*.nix'
 echo "Rebuilding NixOS configuration..."
 tput smcup
 clear
+# grab the latest nixpkgs path
+set -l nixpkgs_path (nix-instantiate --json --eval npins/default.nix -A nixpkgs.outPath | jq -r .)
 echo "Rebuilding NixOS configuration..."
 if set -q _flag_boot
-    sudo nixos-rebuild boot 2>&1 | tee rebuild.log
+    NIX_PATH="nixpkgs=$nixpkgs_path nixos-config=/home/julia/configuration.nix" sudo nixos-rebuild boot 2>&1 | tee rebuild.log
 else
-    sudo nixos-rebuild switch 2>&1 | tee rebuild.log
+    NIX_PATH="nixpkgs=$nixpkgs_path nixos-config=/home/julia/configuration.nix" sudo nixos-rebuild switch 2>&1 | tee rebuild.log
 end
 
 echo "Rebuild completed"

@@ -1,0 +1,31 @@
+{
+  "pins": {
+    "nixpkgs": {
+      "type": "Channel",
+      "name": "nixos-25.05",
+      "url": "https://releases.nixos.org/nixos/25.05/nixos-25.05.807819.e728d7ae4bb6/nixexprs.tar.xz",
+      "hash": "075rsrkbd9c3k54iyk0iz3wv8178d8krb7nyi6rnmvk2lmxrkvll"
+    },
+    "nixpkgs-unstable": {
+      "type": "Channel",
+      "name": "nixos-unstable",
+      "url": "https://releases.nixos.org/nixos/unstable/nixos-25.11pre840654.c2ae88e026f9/nixexprs.tar.xz",
+      "hash": "00g0wfnamgnbl3f9fav84f0yvnlspgx445ijgnc124c5h6ic3a8q"
+    },
+    "nixpkgs-vnpcpin": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "NixOS",
+        "repo": "nixpkgs"
+      },
+      "branch": "nixos-25.05",
+      "submodules": false,
+      "revision": "59133ee770406f605d61698bc4f1a89efcf461d5",
+      "url": "https://github.com/NixOS/nixpkgs/archive/59133ee770406f605d61698bc4f1a89efcf461d5.tar.gz",
+      "hash": "0v4bjwfr2zpxdk9s8ncphchr3x52q3v5yvv9wdsp2bnqnh8mpyh1",
+      "frozen": true
+    }
+  },
+  "version": 5
+}
