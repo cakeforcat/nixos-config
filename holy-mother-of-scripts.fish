@@ -65,14 +65,15 @@ if set -q _flag_help
     return 0
 end
 
+# go to config root
+pushd ~/nixos-config/
+
 # handle update flag
 if set -q _flag_update
     echo "Updating npins"
     npins update
 end
 
-# go to config root
-pushd ~/nixos-config/
 
 # handle edit flag
 if set -q _flag_edit
@@ -121,9 +122,9 @@ clear
 set -l nixpkgs_path (nix-instantiate --json --eval npins/default.nix -A nixpkgs.outPath | jq -r .)
 echo "Rebuilding NixOS configuration..."
 if set -q _flag_boot
-    NIX_PATH="nixpkgs=$nixpkgs_path nixos-config=/home/julia/nixos-config/configuration.nix" sudo nixos-rebuild boot 2>&1 | tee rebuild.log
+    NIX_PATH="nixpkgs=$nixpkgs_path nixos-config=~/nixos-config/configuration.nix" sudo nixos-rebuild boot 2>&1 | tee rebuild.log
 else
-    NIX_PATH="nixpkgs=$nixpkgs_path nixos-config=/home/julia/nixos-config/configuration.nix" sudo nixos-rebuild switch 2>&1 | tee rebuild.log
+    NIX_PATH="nixpkgs=$nixpkgs_path nixos-config=~/nixos-config/configuration.nix" sudo nixos-rebuild switch 2>&1 | tee rebuild.log
 end
 
 echo "Rebuild completed"
