@@ -1,6 +1,9 @@
 #!/usr/bin/env fish
 # A rebuild script that commits on a successful build
-# the approach for tracking the nixos configuration files I use is symlinking
+# the approach for tracking the nixos configuration files I used to use was symlinks.
+# one of the sources below shows how. since then I decided to mercilessly kill nix-channels
+# and use npins to pin my nixpkgs version. I now explicitly pass the nixos-config to the rebuild script.
+# see below for more on that, npins and more. Especially relevant is my comment on nixos forum (last link at the bottom)
 # sources:
 # https://gist.github.com/0atman/1a5133b842f929ba4c1e195ee67599d5
 # https://nixos-and-flakes.thiscute.world/nixos-with-flakes/other-useful-tips#managing-the-configuration-with-git
