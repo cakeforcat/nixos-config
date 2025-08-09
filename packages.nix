@@ -52,8 +52,8 @@
           {
             name = "fish-lsp";
             publisher = "ndonfris";
-            version = "0.1.7";
-            sha256 = "xEqstBvz9EDd5FMjfY7dynFNw2angDNZcWIr06Uguw4=";
+            version = "0.1.11";
+            sha256 = "I3ikOGK++GL51BGZBPWAIGvWBOAw5himdQvANlPog0s=";
           }
         ];
     })
@@ -104,5 +104,9 @@
     gnomeExtensions.touchpad-gesture-customization
 
     unstable.mission-center
+  ];
+
+  environment.gnome.excludePackages = with pkgs; [
+    gnome-console
   ];
 }
