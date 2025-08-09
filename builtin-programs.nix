@@ -21,6 +21,20 @@
     git = {
       enable = true;
       package = pkgs.gitFull;
+      config = {
+        credential.helper = [
+          "cache --timeout 21600" # 6 hours
+          "oauth"
+        ];
+        init.defaultBranch = "main";
+        pull.rebase = true;
+        user = {
+          email = "cakeforcat@gmail.com";
+          name = "cakeforcat";
+          signingkey = "0693518A0F875C13";
+        };
+        commit.gpgsign = true;
+      };
     };
     # gpg
     gnupg.agent = {
