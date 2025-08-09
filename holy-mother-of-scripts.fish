@@ -90,7 +90,7 @@ end
 # Early return if no changes were detected
 if not git diff --quiet '*.nix'
     echo "Changes detected, proceeding with rebuild."
-else if set -q _flag_update
+else if not git diff --quiet 'npins/sources.json'
     echo "No changes detected, but pins updated, proceeding with rebuild."
 else if set -q _flag_force
     echo "No changes detected, but force rebuild requested."
@@ -112,7 +112,7 @@ if not alejandra -q *.nix # noooo dont touch my submodules
 end
 
 # show the diff
-git diff -U0 '*.nix'
+git diff -U0
 
 # start the rebuild
 echo "Rebuilding NixOS configuration..."
@@ -150,6 +150,7 @@ set -l curr_date (echo $curr_json | jq -r '"\(.date)"')
 set -l curr_nixos (echo $curr_json | jq -r '"\(.nixosVersion)"')
 set -l curr_nixos_major (echo $curr_nixos | string split -f "1" -m 2 -r .)
 set -l curr_kernel (echo $curr_json | jq -r '"\(.kernelVersion)"')
+git add npins/sources.json
 git add *.nix
 git commit -m "Gen: $curr_generation NixOS: $curr_nixos_major Kernel: $curr_kernel"
 echo "Changes committed successfully."
