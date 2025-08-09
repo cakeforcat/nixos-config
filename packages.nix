@@ -84,6 +84,9 @@
     libnotify
     jq
 
+    nix-du
+    graphviz
+
     libreoffice-fresh
     hunspell
     hunspellDicts.en_GB-ise
