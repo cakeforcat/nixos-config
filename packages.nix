@@ -30,6 +30,7 @@
     wlink
     gnome-firmware
     freecad
+    vlc
     (vscode-with-extensions.override {
       vscode = vscodium;
       vscodeExtensions = with pkgs.vscode-extensions;
