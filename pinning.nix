@@ -10,7 +10,7 @@ in {
     channel.enable = false;
     nixPath = [
       "nixpkgs=/etc/nixos/nixpkgs"
-      "nixos-config=/home/julia/configuration.nix"
+      "nixos-config=/home/julia/nixos-config/configuration.nix"
     ];
   };
   environment.etc = {

@@ -10,7 +10,7 @@
     ./packages.nix
     ./builtin-programs.nix
     ./builtin-services.nix
-    ./shell.nix
+    ./shell-config.nix
     #./minichlink-udev.nix
     ./vm.nix
   ];
