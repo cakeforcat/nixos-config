@@ -16,6 +16,8 @@ in {
   environment.etc = {
     "nixos/nixpkgs".source = builtins.storePath pkgs.path;
   };
+  # command-not-found fix
+  programs.command-not-found.dbPath = "/etc/nixos/nixpkgs/programs.sqlite";
 
   # pinning
   nixpkgs = {
