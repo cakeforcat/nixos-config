@@ -33,7 +33,6 @@
     vlc
     spot
     spotify
-    unstable.totem
     (vscode-with-extensions.override {
       vscode = vscodium;
       vscodeExtensions = with pkgs.vscode-extensions;
