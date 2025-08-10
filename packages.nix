@@ -31,6 +31,8 @@
     gnome-firmware
     freecad
     vlc
+    spot
+    spotify
     (vscode-with-extensions.override {
       vscode = vscodium;
       vscodeExtensions = with pkgs.vscode-extensions;
