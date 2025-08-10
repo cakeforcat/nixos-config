@@ -31,6 +31,8 @@
     gnome-firmware
     freecad
     vlc
+    clapper
+    celluloid
     spot
     spotify
     (vscode-with-extensions.override {
@@ -114,5 +116,6 @@
 
   environment.gnome.excludePackages = with pkgs; [
     gnome-console
+    totem
   ];
 }
