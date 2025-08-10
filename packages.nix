@@ -95,6 +95,7 @@
     hunspellDicts.en_GB-ise
     hunspellDicts.pl_PL
 
+    ulauncher
     gnome-tweaks
     adw-gtk3
     gnomeExtensions.wallpaper-slideshow
