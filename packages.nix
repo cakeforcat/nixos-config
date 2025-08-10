@@ -30,8 +30,6 @@
     wlink
     gnome-firmware
     freecad
-    vlc
-    clapper
     celluloid
     spot
     spotify
