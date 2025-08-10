@@ -33,6 +33,7 @@
     celluloid
     spot
     spotify
+    pbpctrl
     (vscode-with-extensions.override {
       vscode = vscodium;
       vscodeExtensions = with pkgs.vscode-extensions;
