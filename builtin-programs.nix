@@ -56,13 +56,16 @@
     };
     # direnv
     direnv.enable = true;
-    # yet-another-nix-helper (nh)
-    nh = {
+    # appimage
+    appimage = {
       enable = true;
-      # clean = {
-      #   enable = true;
-      #   extraArgs = "--keep-since 4d --keep 3";
-      # };
+      binfmt = true;
+      package = pkgs.appimage-run.override {
+        extraPkgs = pkgs:
+          with pkgs; [
+            webkitgtk_4_1
+          ];
+      };
     };
   };
 }

@@ -34,6 +34,7 @@
     spot
     spotify
     pbpctrl
+    #(pkgs.callPackage ./bambu-studio/bambu.nix {tbb_2021 = tbb_2021_11;})
     (vscode-with-extensions.override {
       vscode = vscodium;
       vscodeExtensions = with pkgs.vscode-extensions;
