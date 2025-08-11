@@ -11,9 +11,7 @@
     ./builtin-programs.nix
     ./builtin-services.nix
     ./shell-config.nix
-    #./minichlink-udev.nix
     ./vm.nix
-    ./bambu-studio/bambu-appimage.nix
   ];
 
   # extra nix settings
