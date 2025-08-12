@@ -31,7 +31,6 @@
     gnome-firmware
     freecad
     celluloid
-    spot
     spotify
     pbpctrl
     #(pkgs.callPackage ./bambu-studio/bambu.nix {tbb_2021 = tbb_2021_11;})
