@@ -4,7 +4,10 @@
   ...
 }: {
   # allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config = {
+    allowUnfree = true;
+    permittedInsecurePackages = ["googleearth-pro-7.3.6.10201"];
+  };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -33,6 +36,8 @@
     celluloid
     spotify
     pbpctrl
+    googleearth-pro
+
     #(pkgs.callPackage ./bambu-studio/bambu.nix {tbb_2021 = tbb_2021_11;})
     (vscode-with-extensions.override {
       vscode = vscodium;
