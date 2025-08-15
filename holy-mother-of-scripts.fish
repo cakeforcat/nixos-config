@@ -149,7 +149,7 @@ end
 echo "Rebuild successful, committing changes..."
 set -l curr_json (nixos-rebuild list-generations --json | jq -r '.[] | select (.current == true)')
 set -l curr_generation (echo $curr_json | jq -r '"\(.generation)"')
-set -l curr_date (echo $curr_json | jq -r '"\(.date)"')
+# set -l curr_date (echo $curr_json | jq -r '"\(.date)"')
 set -l curr_nixos (echo $curr_json | jq -r '"\(.nixosVersion)"')
 set -l curr_nixos_major (echo $curr_nixos | string split -f "1" -m 2 -r .)
 set -l curr_kernel (echo $curr_json | jq -r '"\(.kernelVersion)"')
