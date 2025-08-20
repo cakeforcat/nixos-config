@@ -1,16 +1,46 @@
 {
   "pins": {
+    "lix-module": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "Git",
+        "url": "https://git.lix.systems/lix-project/nixos-module"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "submodules": false,
+      "version": "2.93.1",
+      "revision": "c3c78a32273e89d28367d8605a4c880f0b6607e3",
+      "url": null,
+      "hash": "1m1lk9mjmcjfi30h1yckjrbdy9yf4msav2dnk8lpn0hrj4mkkw0i"
+    },
+    "lix-src": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "Git",
+        "url": "https://git.lix.systems/lix-project/lix.git"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "submodules": false,
+      "version": "2.93.3",
+      "revision": "017e93ae637ce6dfc958001e5cdc2a3e0182be6f",
+      "url": null,
+      "hash": "152xjnlr733z34ndyxnhdaw7d4f3zcj5w028mlmwy378wvhk9b1s"
+    },
     "nixpkgs": {
       "type": "Channel",
       "name": "nixos-25.05",
-      "url": "https://releases.nixos.org/nixos/25.05/nixos-25.05.808020.c5f08b62ed75/nixexprs.tar.xz",
-      "hash": "1zgjqb2aww707n1ka2cvhfrrxzb7jx54nzaclyzgf39qp0pa0i9b"
+      "url": "https://releases.nixos.org/nixos/25.05/nixos-25.05.808472.a58390ab6f1a/nixexprs.tar.xz",
+      "hash": "09ras1xg05sg8ymxadrsyx6vbfqvjwggg1xfsh2wjjd2cn0ynwyr"
     },
     "nixpkgs-unstable": {
       "type": "Channel",
       "name": "nixos-unstable",
-      "url": "https://releases.nixos.org/nixos/unstable/nixos-25.11pre841808.85dbfc7aaf52/nixexprs.tar.xz",
-      "hash": "0bqpz7xsyv8iymc8i0s5arj1bswq831xhjn9zds4ynv4kscacqi4"
+      "url": "https://releases.nixos.org/nixos/unstable/nixos-25.11pre844474.fbcf476f790d/nixexprs.tar.xz",
+      "hash": "14id7xyz3prbi6d42swjyn8rff3n9brv9wqyhr8w4s2352d26nb4"
     },
     "nixpkgs-vpncpin": {
       "type": "Git",

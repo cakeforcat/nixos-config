@@ -20,12 +20,11 @@ in {
   programs.command-not-found.dbPath = "/etc/nixos/nixpkgs/programs.sqlite";
 
   # pinning
-  nixpkgs = {
-    config = {
-      packageOverrides = pkgs: {
-        unstable = import sources.nixpkgs-unstable {config = config.nixpkgs.config;};
-        vpncpin = import sources.nixpkgs-vpncpin {config = config.nixpkgs.config;};
-      };
-    };
+  nixpkgs.config.packageOverrides = pkgs: {
+    unstable = import sources.nixpkgs-unstable {config = config.nixpkgs.config;};
+    vpncpin = import sources.nixpkgs-vpncpin {config = config.nixpkgs.config;};
   };
+
+  # lix
+  imports = [(import "${sources.lix-module}/module.nix" {lix = sources.lix-src;})];
 }
