@@ -111,7 +111,7 @@ end
 # autoformat nix files
 if not alejandra -q *.nix # noooo dont touch my submodules
     popd
-    exit_with_notification "Alejandra formatting failed, exiting."
+    exit_with_notification "Alejandra formatting failed"
 end
 
 # show the diff
@@ -140,10 +140,10 @@ sleep 1
 tput rmcup
 
 # check if the rebuild was successful
-if rg --quiet "error:" rebuild.log
+if rg --quiet "error:" rebuild.log or rg --quiet "SIGKILL" rebuild.log
     echo "Rebuild failed, exiting."
     popd
-    exit_with_notification "Rebuild failed, check rebuild.log for details."
+    exit_with_notification "Check rebuild.log for details."
 end
 
 echo "Rebuild successful, committing changes..."
