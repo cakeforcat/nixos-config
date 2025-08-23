@@ -128,7 +128,7 @@ set -l nixpkgs_path (nix-instantiate --json --eval npins/default.nix -A nixpkgs.
 # limit jobs options
 set -l limited_opts ""
 if set -q _flag_limited
-    set limited_opts "--max-jobs 1 --cores 1"
+    set limited_opts "--cores=4"
     echo "Resource limited rebuild enabled"
 end
 echo "Rebuilding NixOS configuration..."
