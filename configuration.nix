@@ -18,6 +18,17 @@
   nix.settings.trusted-users = ["root" "julia"];
   system.rebuild.enableNg = true;
 
+  systemd.slices.anti-hungry.sliceConfig = {
+    CPUAccounting = true;
+    MemoryAccounting = true;
+    CPUQuota = "50%";
+    MemoryHigh = "50%";
+    MemoryMax = "75%";
+    MemorySwapMax = "50%";
+    MemoryZSwapMax = "50%";
+  };
+  systemd.services.nix-daemon.serviceConfig.Slice = "anti-hungry.slice";
+  systemd.services.nixos-upgrade.serviceConfig.Slice = "anti-hungry.slice";
   # Boot
   boot = {
     # Bootloader

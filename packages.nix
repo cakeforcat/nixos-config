@@ -119,7 +119,7 @@
     gnomeExtensions.open-bar
 
     unstable.mission-center
-    bambupr.bambu-studio
+    #bambupr.bambu-studio
   ];
 
   environment.gnome.excludePackages = with pkgs; [
