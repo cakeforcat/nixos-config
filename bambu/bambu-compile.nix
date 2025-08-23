@@ -160,7 +160,6 @@ stdenv.mkDerivation rec {
     "-DDEP_WX_GTK3=ON"
     "-DSLIC3R_BUILD_TESTS=0"
     "-DCMAKE_CXX_FLAGS=-DBOOST_LOG_DYN_LINK"
-    "-j4"
   ];
 
   preFixup = ''

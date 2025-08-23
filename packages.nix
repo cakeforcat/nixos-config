@@ -118,7 +118,7 @@
     gnomeExtensions.open-bar
 
     unstable.mission-center
-    #bambupr.bambu-studio
+    bambupr.bambu-studio
     #(callPackage ./bambu/bambu-compile.nix {tbb_2021 = pkgs.tbb_2021_11;})
   ];
 
