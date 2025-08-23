@@ -18,17 +18,17 @@
   nix.settings.trusted-users = ["root" "julia"];
   system.rebuild.enableNg = true;
 
-  systemd.slices.anti-hungry.sliceConfig = {
-    CPUAccounting = true;
-    MemoryAccounting = true;
-    CPUQuota = "50%";
-    MemoryHigh = "7G";
-    MemoryMax = "8G";
-    MemorySwapMax = "10G";
-    MemoryZSwapMax = "10G";
-  };
-  systemd.services.nix-daemon.serviceConfig.Slice = "anti-hungry.slice";
-  systemd.services.nixos-upgrade.serviceConfig.Slice = "anti-hungry.slice";
+  # systemd.slices.anti-hungry.sliceConfig = {
+  #   CPUAccounting = true;
+  #   MemoryAccounting = true;
+  #   CPUQuota = "50%";
+  #   MemoryHigh = "7G";
+  #   MemoryMax = "8G";
+  #   MemorySwapMax = "10G";
+  #   MemoryZSwapMax = "10G";
+  # };
+  # systemd.services.nix-daemon.serviceConfig.Slice = "anti-hungry.slice";
+  # systemd.services.nixos-upgrade.serviceConfig.Slice = "anti-hungry.slice";
   # Boot
   boot = {
     # Bootloader
