@@ -12,7 +12,6 @@
     ./builtin-services.nix
     ./shell-config.nix
     ./vm.nix
-    ./bambu.nix
   ];
 
   # extra nix settings

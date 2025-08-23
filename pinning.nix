@@ -23,6 +23,7 @@ in {
   nixpkgs.config.packageOverrides = pkgs: {
     unstable = import sources.nixpkgs-unstable {config = config.nixpkgs.config;};
     vpncpin = import sources.nixpkgs-vpncpin {config = config.nixpkgs.config;};
+    bambupr = import sources.bambu-liberodark {config = config.nixpkgs.config;};
   };
 
   # lix
