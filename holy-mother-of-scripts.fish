@@ -125,10 +125,11 @@ clear
 set -l nixpkgs_path (nix-instantiate --json --eval npins/default.nix -A nixpkgs.outPath | jq -r .)
 echo "Rebuilding NixOS configuration..."
 if set -q _flag_boot
-    sudo nixos-rebuild boot -I nixos-config=/home/julia/nixos-config/configuration.nix -I nixpkgs=$nixpkgs_path 2>&1 | tee rebuild.log
+    set -l rebuild_mode "boot"
 else
-    sudo nixos-rebuild switch -I nixos-config=/home/julia/nixos-config/configuration.nix -I nixpkgs=$nixpkgs_path 2>&1 | tee rebuild.log
+    set -l rebuild_mode "switch"
 end
+sudo nixos-rebuild $rebuild_mode -I nixos-config=/home/julia/nixos-config/configuration.nix -I nixpkgs=$nixpkgs_path 2>&1 | tee rebuild.log
 
 echo "Rebuild completed"
 echo "Exit in 3..."

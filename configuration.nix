@@ -22,10 +22,10 @@
     CPUAccounting = true;
     MemoryAccounting = true;
     CPUQuota = "50%";
-    MemoryHigh = "50%";
-    MemoryMax = "75%";
-    MemorySwapMax = "50%";
-    MemoryZSwapMax = "50%";
+    MemoryHigh = "7G";
+    MemoryMax = "8G";
+    MemorySwapMax = "10G";
+    MemoryZSwapMax = "10G";
   };
   systemd.services.nix-daemon.serviceConfig.Slice = "anti-hungry.slice";
   systemd.services.nixos-upgrade.serviceConfig.Slice = "anti-hungry.slice";
