@@ -125,11 +125,11 @@ clear
 set -l nixpkgs_path (nix-instantiate --json --eval npins/default.nix -A nixpkgs.outPath | jq -r .)
 echo "Rebuilding NixOS configuration..."
 if set -q _flag_boot
-    set -l rebuild_mode "boot"
+    sudo nixos-rebuild boot -I nixos-config=/home/julia/nixos-config/configuration.nix -I nixpkgs=$nixpkgs_path 2>&1 | tee rebuild.log
 else
-    set -l rebuild_mode "switch"
+    sudo nixos-rebuild switch -I nixos-config=/home/julia/nixos-config/configuration.nix -I nixpkgs=$nixpkgs_path 2>&1 | tee rebuild.log
 end
-sudo nixos-rebuild $rebuild_mode -I nixos-config=/home/julia/nixos-config/configuration.nix -I nixpkgs=$nixpkgs_path 2>&1 | tee rebuild.log
+
 
 echo "Rebuild completed"
 echo "Exit in 3..."
@@ -141,8 +141,14 @@ sleep 1
 tput rmcup
 
 # check if the rebuild was successful
-if rg --quiet "error:" rebuild.log or rg --quiet "SIGKILL" rebuild.log
+if rg --quiet "error:" rebuild.log
     echo "Rebuild failed, exiting."
+    popd
+    exit_with_notification "Check rebuild.log for details."
+end
+
+if rg --quiet "SIGKILL" rebuild.log
+    echo "Rebuild was killed (probably out of memory), exiting."
     popd
     exit_with_notification "Check rebuild.log for details."
 end
