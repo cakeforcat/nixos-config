@@ -120,6 +120,7 @@
 
     unstable.mission-center
     #bambupr.bambu-studio
+    #(callPackage ./bambu/bambu-compile.nix {tbb_2021 = pkgs.tbb_2021_11;})
   ];
 
   environment.gnome.excludePackages = with pkgs; [

@@ -16,7 +16,7 @@
 
   # extra nix settings
   nix.settings.trusted-users = ["root" "julia"];
-  system.rebuild.enableNg = true;
+  #system.rebuild.enableNg = true;
 
   # systemd.slices.anti-hungry.sliceConfig = {
   #   CPUAccounting = true;
