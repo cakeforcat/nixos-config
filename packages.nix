@@ -116,6 +116,7 @@
     gnomeExtensions.touchpad-gesture-customization
     gnomeExtensions.bluetooth-battery-meter
     gnomeExtensions.open-bar
+    gnomeExtensions.fuzzy-app-search
 
     unstable.mission-center
     bambupr.bambu-studio
