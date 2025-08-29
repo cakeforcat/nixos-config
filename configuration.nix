@@ -12,6 +12,7 @@
     ./builtin-services.nix
     ./shell-config.nix
     ./vm.nix
+    ./nix-alien.nix
   ];
 
   # extra nix settings

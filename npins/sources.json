@@ -30,6 +30,19 @@
       "url": null,
       "hash": "152xjnlr733z34ndyxnhdaw7d4f3zcj5w028mlmwy378wvhk9b1s"
     },
+    "nix-alien": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "thiagokokada",
+        "repo": "nix-alien"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "e62b3ad75e8c9a5e505fc78b9b40eed1178634cb",
+      "url": "https://github.com/thiagokokada/nix-alien/archive/e62b3ad75e8c9a5e505fc78b9b40eed1178634cb.tar.gz",
+      "hash": "1r9xjixkzr0z5a3g0m6rffgbqgcywnk7hwnvaknd26swlnvrmjzh"
+    },
     "nixpkgs": {
       "type": "Channel",
       "name": "nixos-25.05",
