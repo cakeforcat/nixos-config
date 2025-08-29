@@ -1,18 +1,5 @@
 {
   "pins": {
-    "bambu-liberodark": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "liberodark",
-        "repo": "nixpkgs"
-      },
-      "branch": "bambu-studio-02.01.01.52",
-      "submodules": false,
-      "revision": "57c6c6af8c491c877ca755dd77e6300c1172ed2c",
-      "url": "https://github.com/liberodark/nixpkgs/archive/57c6c6af8c491c877ca755dd77e6300c1172ed2c.tar.gz",
-      "hash": "1pzprbi0x93hymmlpzbh95vr6xdkvai4iwmkx13lbdyr271v078r"
-    },
     "lix-module": {
       "type": "GitRelease",
       "repository": {

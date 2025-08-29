@@ -71,7 +71,7 @@
     # protonup-qt
     nvtopPackages.full
     warp
-    vesktop
+    #vesktop
     discord
     fractal
 
@@ -118,9 +118,8 @@
     gnomeExtensions.open-bar
     gnomeExtensions.fuzzy-app-search
 
-    unstable.mission-center
-    bambupr.bambu-studio
-    #(callPackage ./bambu/bambu-compile.nix {tbb_2021 = pkgs.tbb_2021_11;})
+    #unstable.mission-center
+    #unstable.bambu-studio
   ];
 
   environment.gnome.excludePackages = with pkgs; [

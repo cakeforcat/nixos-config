@@ -67,5 +67,7 @@
           ];
       };
     };
+    # nix-ld
+    nix-ld.enable = true;
   };
 }
