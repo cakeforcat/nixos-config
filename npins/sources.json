@@ -46,14 +46,14 @@
     "nixpkgs": {
       "type": "Channel",
       "name": "nixos-25.05",
-      "url": "https://releases.nixos.org/nixos/25.05/nixos-25.05.808472.a58390ab6f1a/nixexprs.tar.xz",
-      "hash": "09ras1xg05sg8ymxadrsyx6vbfqvjwggg1xfsh2wjjd2cn0ynwyr"
+      "url": "https://releases.nixos.org/nixos/25.05/nixos-25.05.809186.b4c2c57c31e6/nixexprs.tar.xz",
+      "hash": "0m54flfm8r3pzxl84za79w6yad1370ph8im7izzmhdw49lna2lgr"
     },
     "nixpkgs-unstable": {
       "type": "Channel",
       "name": "nixos-unstable",
-      "url": "https://releases.nixos.org/nixos/unstable/nixos-25.11pre844474.fbcf476f790d/nixexprs.tar.xz",
-      "hash": "14id7xyz3prbi6d42swjyn8rff3n9brv9wqyhr8w4s2352d26nb4"
+      "url": "https://releases.nixos.org/nixos/unstable/nixos-25.11pre854036.d7600c775f87/nixexprs.tar.xz",
+      "hash": "12pv1g1jkwyf1p4pn15skaa6wh0x6k4ip9hmjs1wc9r2i0rv0lh3"
     },
     "nixpkgs-vpncpin": {
       "type": "Git",

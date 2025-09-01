@@ -6,7 +6,7 @@
   # allow unfree packages
   nixpkgs.config = {
     allowUnfree = true;
-    permittedInsecurePackages = ["googleearth-pro-7.3.6.10201"];
+    # permittedInsecurePackages = ["googleearth-pro-7.3.6.10201"];
   };
 
   # List packages installed in system profile. To search, run:
@@ -36,7 +36,7 @@
     celluloid
     spotify
     pbpctrl
-    googleearth-pro
+    #googleearth-pro
 
     (vscode-with-extensions.override {
       vscode = vscodium;
@@ -119,7 +119,7 @@
     gnomeExtensions.fuzzy-app-search
 
     #unstable.mission-center
-    #unstable.bambu-studio
+    unstable.bambu-studio
   ];
 
   environment.gnome.excludePackages = with pkgs; [
