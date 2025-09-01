@@ -119,7 +119,7 @@
     gnomeExtensions.fuzzy-app-search
 
     #unstable.mission-center
-    unstable.bambu-studio
+    #unstable.bambu-studio
   ];
 
   environment.gnome.excludePackages = with pkgs; [
