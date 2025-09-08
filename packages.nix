@@ -60,7 +60,7 @@
           {
             name = "fish-lsp";
             publisher = "ndonfris";
-            version = "0.1.11";
+            version = "0.1.14";
             sha256 = "I3ikOGK++GL51BGZBPWAIGvWBOAw5himdQvANlPog0s=";
           }
         ];
@@ -100,7 +100,7 @@
     hunspellDicts.en_GB-ise
     hunspellDicts.pl_PL
 
-    ulauncher
+    #ulauncher
     gnome-tweaks
     adw-gtk3
     gnomeExtensions.wallpaper-slideshow

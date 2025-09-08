@@ -18,7 +18,30 @@
   # extra nix settings
   nix.settings.trusted-users = ["root" "julia"];
   system.rebuild.enableNg = true;
-  nix.settings.cores = 4;
+  nix.settings.cores = 8;
+
+  # lix
+  # nixpkgs.overlays = [
+  #   (final: prev: {
+  #     inherit
+  #       (final.lixPackageSets.stable)
+  #       nixpkgs-review
+  #       nix-direnv
+  #       nix-eval-jobs
+  #       nix-fast-build
+  #       colmena
+  #       ;
+  #   })
+  # ];
+  nix.package = pkgs.lixPackageSets.stable.lix;
+
+  # disable broken sleep
+  systemd.sleep.extraConfig = ''
+    AllowSuspend=no
+    AllowHibernation=no
+    AllowHybridSleep=no
+    AllowSuspendThenHibernate=no
+  '';
 
   # systemd.slices.anti-hungry.sliceConfig = {
   #   CPUAccounting = true;
@@ -39,12 +62,10 @@
       efi.canTouchEfiVariables = true;
     };
     # Kernel
-    kernelPackages = pkgs.linuxPackages_6_15;
+    kernelPackages = pkgs.linuxPackages_latest;
     # Kernel modules
-    extraModulePackages = with config.boot.kernelPackages; [lenovo-legion-module];
     kernelModules = [
       "ntsync"
-      #"lenovo-legion-module"
     ];
   };
 

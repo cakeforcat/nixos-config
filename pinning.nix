@@ -21,10 +21,12 @@ in {
 
   # pinning
   nixpkgs.config.packageOverrides = pkgs: {
-    unstable = import sources.nixpkgs-unstable {config = config.nixpkgs.config;};
+    # unstable = import sources.nixpkgs-unstable {config = config.nixpkgs.config;};
+    # moving to nixos-unstable channel
     vpncpin = import sources.nixpkgs-vpncpin {config = config.nixpkgs.config;};
   };
 
   # lix
-  imports = [(import "${sources.lix-module}/module.nix" {lix = sources.lix-src;})];
+  # imports = [(import "${sources.lix-module}/module.nix" {lix = sources.lix-src;})];
+  # moved to configuration.nix, stabilised
 }
