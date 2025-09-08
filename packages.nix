@@ -61,7 +61,7 @@
             name = "fish-lsp";
             publisher = "ndonfris";
             version = "0.1.14";
-            sha256 = "I3ikOGK++GL51BGZBPWAIGvWBOAw5himdQvANlPog0s=";
+            sha256 = "sha256-1OUVZJ5TTeR2nChRPSU5ViLAaUAovtqOk9kq408iW84=";
           }
         ];
     })
