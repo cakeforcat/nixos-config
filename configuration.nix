@@ -24,16 +24,15 @@
   # nixpkgs.overlays = [
   #   (final: prev: {
   #     inherit
-  #       (final.lixPackageSets.stable)
+  #       (prev.lixPackageSets.git)
   #       nixpkgs-review
-  #       nix-direnv
   #       nix-eval-jobs
   #       nix-fast-build
   #       colmena
   #       ;
   #   })
   # ];
-  nix.package = pkgs.lixPackageSets.stable.lix;
+  nix.package = pkgs.lixPackageSets.git.lix;
 
   # disable broken sleep
   systemd.sleep.extraConfig = ''
