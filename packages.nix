@@ -117,6 +117,8 @@
     gnomeExtensions.bluetooth-battery-meter
     gnomeExtensions.open-bar
     gnomeExtensions.fuzzy-app-search
+    cynthion
+    packetry
 
     #unstable.mission-center
     #bambu-studio
