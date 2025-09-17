@@ -182,7 +182,7 @@ if set -q _flag_push
 end
 
 # handle clean flag
-if set -q _flag_clean and 
+if set -q _flag_clean
 
     echo "Collecting garbage..."
     tput smcup
