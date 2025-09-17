@@ -63,6 +63,12 @@
             version = "0.1.13";
             sha256 = "sha256-jPBcSQHuSvvWfc4KdtTkUJkx/fGYiAANFjABe4DzopQ=";
           }
+          {
+            name = "openscad-language-support";
+            publisher = "Leathong";
+            version = "2.0.1";
+            sha256 = "sha256-GTvn97POOVmie7mOD/Q3ivEHXmqb+hvgiic9pTWYS0s=";
+          }
         ];
     })
     bitwarden-desktop
@@ -119,6 +125,8 @@
     gnomeExtensions.fuzzy-app-search
     cynthion
     packetry
+
+    openscad-unstable
 
     #unstable.mission-center
     #bambu-studio
