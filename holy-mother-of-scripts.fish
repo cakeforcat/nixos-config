@@ -31,6 +31,8 @@ set options $options (fish_opt -s u -l update)
 set options $options (fish_opt -s p -l push)
 set options $options (fish_opt -s f -l force)
 set options $options (fish_opt -s l -l limited)
+set options $options (fish_opt -s c -l clean)
+
 
 
 argparse --exclusive "boot,push" $options -- $argv
@@ -64,6 +66,7 @@ if set -q _flag_help
     echo "  -p,       --push          Push changes to remote repository (if successful)"
     echo "  -f,       --force         Force rebuild even if no changes detected"
     echo "  -l,       --limited       Resource limited rebuild"
+    echo "  -c,       --clean         collect garbage after rebuild, and run rebuild boot to refresh boot entries"
     echo ""
     echo "for safety boot and push are mutually exclusive"
     echo "If you want to push changes, use the --push flag after a successful reboot."
@@ -176,6 +179,27 @@ echo "Changes committed successfully."
 # handle push flag
 if set -q _flag_push
     push_to_remote
+end
+
+# handle clean flag
+if set -q _flag_clean and 
+
+    echo "Collecting garbage..."
+    tput smcup
+    clear
+    echo "Collecting garbage..."
+    sudo nix-collect-garbage -d 2>&1 | tee gc.log
+    echo "Garbage collection completed."
+    tput rmcup
+
+    echo "refreshing boot entries..."
+    tput smcup
+    clear
+    echo "refreshing boot entries..."
+    sudo nixos-rebuild boot -I nixos-config=/home/julia/nixos-config/configuration.nix -I nixpkgs=$nixpkgs_path 2>&1 | tee refresh-boot.log
+    echo "Boot entries refreshed."
+    tput rmcup
+
 end
 
 # finish successfully
