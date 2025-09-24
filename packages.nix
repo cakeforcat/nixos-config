@@ -127,6 +127,7 @@
     packetry
 
     openscad-unstable
+    ungoogled-chromium
 
     #unstable.mission-center
     #bambu-studio
