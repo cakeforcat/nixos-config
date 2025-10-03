@@ -60,8 +60,8 @@
           {
             name = "fish-lsp";
             publisher = "ndonfris";
-            version = "0.1.13";
-            sha256 = "sha256-jPBcSQHuSvvWfc4KdtTkUJkx/fGYiAANFjABe4DzopQ=";
+            version = "0.1.16";
+            sha256 = "sha256-6WsBJbQ9CgiZ7Wn9U33MxEEorR96zKtGXsMRJZ3j2Dk=";
           }
           {
             name = "openscad-language-support";
