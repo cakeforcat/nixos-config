@@ -94,7 +94,8 @@
     mangohud
     mangojuice
 
-    alejandra
+    # alejandra
+    nixfmt
     libnotify
     jq
 
