@@ -37,6 +37,7 @@
     celluloid
     spotify
     pbpctrl
+    gqrx
     #sdrangel
     #googleearth-pro
 
