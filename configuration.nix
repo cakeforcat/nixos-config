@@ -57,6 +57,10 @@
   # };
   # systemd.services.nix-daemon.serviceConfig.Slice = "anti-hungry.slice";
   # systemd.services.nixos-upgrade.serviceConfig.Slice = "anti-hungry.slice";
+
+  # RTL-SDR
+  hardware.rtl-sdr.enable = true;
+
   # Boot
   boot = {
     # Bootloader
@@ -114,6 +118,7 @@
       "networkmanager"
       "wheel"
       "libvirtd"
+      "plugdev"
     ];
     packages = with pkgs; [
       #  thunderbird
