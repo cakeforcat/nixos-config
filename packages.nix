@@ -37,7 +37,7 @@
     celluloid
     spotify
     pbpctrl
-    sdrangel
+    #sdrangel
     #googleearth-pro
 
     (vscode-with-extensions.override {
