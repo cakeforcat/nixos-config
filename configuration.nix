@@ -119,6 +119,7 @@
       "wheel"
       "libvirtd"
       "plugdev"
+      "dialout"
     ];
     packages = with pkgs; [
       #  thunderbird
