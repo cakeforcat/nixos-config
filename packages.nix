@@ -38,6 +38,7 @@
     spotify
     pbpctrl
     gqrx
+    arduino-ide
     #sdrangel
     #googleearth-pro
 
