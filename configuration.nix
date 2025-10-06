@@ -2,7 +2,8 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
   imports = [
     ./nixos-hardware/lenovo/legion/15arh05h/default.nix
     ./hardware-configuration.nix
@@ -16,7 +17,10 @@
   ];
 
   # extra nix settings
-  nix.settings.trusted-users = ["root" "julia"];
+  nix.settings.trusted-users = [
+    "root"
+    "julia"
+  ];
   system.rebuild.enableNg = true;
   nix.settings.cores = 8;
 
@@ -106,7 +110,11 @@
   users.users.julia = {
     isNormalUser = true;
     description = "Julia";
-    extraGroups = ["networkmanager" "wheel" "libvirtd"];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "libvirtd"
+    ];
     packages = with pkgs; [
       #  thunderbird
     ];

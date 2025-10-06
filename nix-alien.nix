@@ -2,10 +2,12 @@
   config,
   pkgs,
   ...
-}: let
+}:
+let
   sources = import ./npins;
-  nix-alien-pkgs = import sources.nix-alien {};
-in {
+  nix-alien-pkgs = import sources.nix-alien { };
+in
+{
   environment.systemPackages = with nix-alien-pkgs; [
     nix-alien
   ];

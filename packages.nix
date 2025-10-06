@@ -2,7 +2,8 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
   # allow unfree packages
   nixpkgs.config = {
     allowUnfree = true;
@@ -36,11 +37,13 @@
     celluloid
     spotify
     pbpctrl
+    sdrangel
     #googleearth-pro
 
     (vscode-with-extensions.override {
       vscode = vscodium;
-      vscodeExtensions = with pkgs.vscode-extensions;
+      vscodeExtensions =
+        with pkgs.vscode-extensions;
         [
           ms-python.python
           ms-python.debugpy

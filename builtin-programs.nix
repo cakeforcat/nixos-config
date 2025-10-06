@@ -2,7 +2,8 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
   # builtin program derivations
   programs = {
     # firefox
@@ -10,7 +11,7 @@
     # steam
     steam = {
       enable = true;
-      extraCompatPackages = [pkgs.proton-ge-bin];
+      extraCompatPackages = [ pkgs.proton-ge-bin ];
     };
     # GSConnect
     kdeconnect = {
@@ -61,8 +62,8 @@
       enable = true;
       binfmt = true;
       package = pkgs.appimage-run.override {
-        extraPkgs = pkgs:
-          with pkgs; [
+        extraPkgs =
+          pkgs: with pkgs; [
             webkitgtk_4_1
           ];
       };

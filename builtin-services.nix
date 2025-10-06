@@ -2,7 +2,8 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
   security.rtkit.enable = true;
   # builtin services derivations
   services = {
@@ -33,7 +34,7 @@
     };
 
     # tray icons
-    udev.packages = [pkgs.gnome-settings-daemon];
+    udev.packages = [ pkgs.gnome-settings-daemon ];
     # flatpak for the odd ones out
     flatpak.enable = true;
     # jellyfin
@@ -45,5 +46,5 @@
     fwupd.enable = true;
   };
   # dont start jellyfin on boot
-  systemd.services.jellyfin.wantedBy = pkgs.lib.mkForce [];
+  systemd.services.jellyfin.wantedBy = pkgs.lib.mkForce [ ];
 }
