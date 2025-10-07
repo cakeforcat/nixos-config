@@ -114,9 +114,9 @@ else
 end
 
 # autoformat nix files
-if not alejandra -q *.nix # noooo dont touch my submodules
+if not nixfmt -q *.nix # noooo dont touch my submodules
     popd
-    exit_with_notification "Alejandra formatting failed"
+    exit_with_notification "Nixfmt formatting failed"
 end
 
 # show the diff
