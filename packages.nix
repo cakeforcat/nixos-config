@@ -30,7 +30,7 @@
     fd
     ripgrep
     fastfetch
-    fish-lsp
+    # fish-lsp
     wlink
     gnome-firmware
     freecad
