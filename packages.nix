@@ -37,7 +37,7 @@
     celluloid
     spotify
     pbpctrl
-    gqrx
+    #gqrx
     arduino-ide
     #sdrangel
     #googleearth-pro
@@ -60,14 +60,9 @@
           myriad-dreamin.tinymist
           mkhl.direnv
           tamasfe.even-better-toml
+          ndonfris.fish-lsp
         ]
         ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-          {
-            name = "fish-lsp";
-            publisher = "ndonfris";
-            version = "0.1.16";
-            sha256 = "sha256-6WsBJbQ9CgiZ7Wn9U33MxEEorR96zKtGXsMRJZ3j2Dk=";
-          }
           {
             name = "openscad-language-support";
             publisher = "Leathong";
@@ -129,8 +124,8 @@
     gnomeExtensions.bluetooth-battery-meter
     gnomeExtensions.open-bar
     gnomeExtensions.fuzzy-app-search
-    cynthion
-    packetry
+    #cynthion
+    #packetry
 
     openscad-unstable
     ungoogled-chromium
