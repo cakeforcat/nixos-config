@@ -132,6 +132,11 @@
 
     #unstable.mission-center
     #bambu-studio
+    (gnuradio.override {
+      extraPackages = with gnuradioPackages; [
+        lora_sdr
+      ];
+    })
   ];
 
   environment.gnome.excludePackages = with pkgs; [
