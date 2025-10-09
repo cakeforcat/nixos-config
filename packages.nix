@@ -33,7 +33,7 @@
     # fish-lsp
     wlink
     gnome-firmware
-    freecad
+    # freecad
     celluloid
     spotify
     pbpctrl
