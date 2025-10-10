@@ -124,6 +124,7 @@
     gnomeExtensions.bluetooth-battery-meter
     gnomeExtensions.open-bar
     gnomeExtensions.fuzzy-app-search
+    gnomeExtensions.color-picker
     #cynthion
     #packetry
 
