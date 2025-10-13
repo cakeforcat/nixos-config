@@ -73,10 +73,8 @@
     bitwarden-desktop
     gnome-browser-connector
     wl-clipboard
-    # protonup-qt
     nvtopPackages.full
     warp
-    #vesktop
     discord
     fractal
 
@@ -87,13 +85,12 @@
     qbittorrent
     smile
     starship
-    # kicad
+    kicad
     prismlauncher
     zulu24
     mangohud
     mangojuice
 
-    # alejandra
     nixfmt
     libnotify
     jq
@@ -107,7 +104,6 @@
     hunspellDicts.en_GB-ise
     hunspellDicts.pl_PL
 
-    #ulauncher
     gnome-tweaks
     adw-gtk3
     gnomeExtensions.wallpaper-slideshow
