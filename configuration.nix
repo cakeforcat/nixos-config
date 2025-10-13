@@ -14,7 +14,7 @@
     ./shell-config.nix
     ./vm.nix
     ./nix-alien.nix
-    #./plymouth.nix
+    ./plymouth.nix
   ];
 
   # extra nix settings
@@ -122,9 +122,9 @@
       "plugdev"
       "dialout"
     ];
-    packages = with pkgs; [
-      #  thunderbird
-    ];
+    # packages = with pkgs; [
+    #   thunderbird
+    # ];
   };
 
   # global env variables

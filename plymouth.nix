@@ -1,14 +1,13 @@
 { pkgs, ... }:
 {
   boot = {
-
     plymouth = {
       enable = true;
-      theme = "rings";
+      theme = "loader_alt";
       themePackages = with pkgs; [
         # By default we would install all themes
         (adi1090x-plymouth-themes.override {
-          selected_themes = [ "rings" ];
+          selected_themes = [ "loader_alt" ];
         })
       ];
     };
@@ -27,6 +26,5 @@
     # It's still possible to open the bootloader list by pressing any key
     # It will just not appear on screen unless a key is pressed
     loader.timeout = 0;
-
   };
 }

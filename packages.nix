@@ -87,7 +87,7 @@
     qbittorrent
     smile
     starship
-    kicad
+    # kicad
     prismlauncher
     zulu24
     mangohud
@@ -130,7 +130,7 @@
     #packetry
 
     openscad-unstable
-    ungoogled-chromium
+    # ungoogled-chromium
 
     #unstable.mission-center
     #bambu-studio
