@@ -39,7 +39,7 @@ argparse --exclusive "boot,push" $options -- $argv
 
 function exit_with_notification
     set -l message $argv[1]
-    notify-send -e "Rebuild Failed: $message" --icon=software-update-urgent
+    notify-send --transient --icon=software-update-urgent --app-name=NIXIT "Rebuild Failed: $message"
     echo $message
     exit 1
 end
@@ -205,5 +205,5 @@ end
 # finish successfully
 popd
 echo "NixOS configuration rebuild and commit completed successfully."
-notify-send -e "Rebuild Successful" --icon=software-update-available
+notify-send --transient --icon=software-update-available --app-name=NIXIT "Rebuild Successful" 
 return 0
