@@ -71,7 +71,6 @@
         ];
     })
     bitwarden-desktop
-    gnome-browser-connector
     wl-clipboard
     nvtopPackages.full
     warp
