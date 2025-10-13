@@ -125,6 +125,7 @@
     gnomeExtensions.open-bar
     gnomeExtensions.fuzzy-app-search
     gnomeExtensions.color-picker
+    gnomeExtensions.caffeine
     #cynthion
     #packetry
 
