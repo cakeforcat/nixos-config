@@ -37,7 +37,7 @@
     celluloid
     spotify
     pbpctrl
-    #gqrx
+    gqrx
     arduino-ide
     #sdrangel
     #googleearth-pro
@@ -47,14 +47,13 @@
       vscodeExtensions =
         with pkgs.vscode-extensions;
         [
+          jnoortheen.nix-ide
           ms-python.python
           ms-python.debugpy
           charliermarsh.ruff
           github.copilot
           github.copilot-chat
           grapecity.gc-excelviewer
-          bbenoist.nix
-          jeff-hykin.better-nix-syntax
           emroussel.atomize-atom-one-dark-theme
           ms-python.vscode-pylance
           myriad-dreamin.tinymist
@@ -98,6 +97,7 @@
     nixfmt
     libnotify
     jq
+    nil
 
     nix-du
     graphviz

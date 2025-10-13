@@ -14,6 +14,7 @@
     ./shell-config.nix
     ./vm.nix
     ./nix-alien.nix
+    #./plymouth.nix
   ];
 
   # extra nix settings
