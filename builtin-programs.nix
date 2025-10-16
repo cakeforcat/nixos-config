@@ -43,6 +43,7 @@
       settings = {
         default-cache-ttl = 28800; # 8 hours
         max-cache-ttl = 28800; # 8 hours
+        pinentry-timeout = 600; # 10 minutes
       };
     };
     # neovim
