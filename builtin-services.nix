@@ -20,7 +20,7 @@
     # Enable the GNOME Desktop Environment.
     displayManager = {
       gdm.enable = true;
-      autoLogin.user = "julia";
+      #autoLogin.user = "julia";
     };
     desktopManager.gnome.enable = true;
 
