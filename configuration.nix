@@ -85,6 +85,7 @@
       enable = true;
       plugins = with pkgs; [
         vpncpin.networkmanager-vpnc
+        networkmanager-openconnect
       ];
     };
   };
