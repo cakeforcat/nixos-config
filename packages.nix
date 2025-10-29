@@ -45,31 +45,29 @@
 
     (vscode-with-extensions.override {
       vscode = vscodium;
-      vscodeExtensions =
-        with pkgs.vscode-extensions;
-        [
-          jnoortheen.nix-ide
-          ms-python.python
-          ms-python.debugpy
-          charliermarsh.ruff
-          github.copilot
-          github.copilot-chat
-          grapecity.gc-excelviewer
-          emroussel.atomize-atom-one-dark-theme
-          ms-python.vscode-pylance
-          myriad-dreamin.tinymist
-          mkhl.direnv
-          tamasfe.even-better-toml
-          ndonfris.fish-lsp
-        ]
-        ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-          {
-            name = "openscad-language-support";
-            publisher = "Leathong";
-            version = "2.0.1";
-            sha256 = "sha256-GTvn97POOVmie7mOD/Q3ivEHXmqb+hvgiic9pTWYS0s=";
-          }
-        ];
+      vscodeExtensions = with pkgs.vscode-extensions; [
+        jnoortheen.nix-ide
+        ms-python.python
+        ms-python.debugpy
+        charliermarsh.ruff
+        github.copilot
+        github.copilot-chat
+        grapecity.gc-excelviewer
+        emroussel.atomize-atom-one-dark-theme
+        ms-python.vscode-pylance
+        myriad-dreamin.tinymist
+        mkhl.direnv
+        tamasfe.even-better-toml
+        ndonfris.fish-lsp
+      ];
+      # ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+      #   {
+      #     name = "openscad-language-support";
+      #     publisher = "Leathong";
+      #     version = "2.0.1";
+      #     sha256 = "sha256-GTvn97POOVmie7mOD/Q3ivEHXmqb+hvgiic9pTWYS0s=";
+      #   }
+      # ];
     })
     bitwarden-desktop
     wl-clipboard
@@ -125,7 +123,7 @@
     #cynthion
     #packetry
 
-    openscad-unstable
+    #openscad-unstable
     # ungoogled-chromium
 
     #unstable.mission-center

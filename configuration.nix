@@ -37,7 +37,7 @@
   #       ;
   #   })
   # ];
-  nix.package = pkgs.lixPackageSets.git.lix;
+  nix.package = pkgs.lixPackageSets.latest.lix;
 
   # disable broken sleep
   systemd.sleep.extraConfig = ''
