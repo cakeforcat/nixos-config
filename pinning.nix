@@ -23,8 +23,6 @@ in
 
   # pinning
   nixpkgs.config.packageOverrides = pkgs: {
-    # unstable = import sources.nixpkgs-unstable {config = config.nixpkgs.config;};
-    # moving to nixos-unstable channel
     vpncpin = import sources.nixpkgs-vpncpin { config = config.nixpkgs.config; };
   };
 
