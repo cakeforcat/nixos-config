@@ -16,8 +16,8 @@
     "nixpkgs": {
       "type": "Channel",
       "name": "nixos-unstable",
-      "url": "https://releases.nixos.org/nixos/unstable/nixos-25.11pre887511.2fb006b87f04/nixexprs.tar.xz",
-      "hash": "1pd4zf09wzvzg9sfm10w1xyc7d4bkq7bdwx987pa747cgknk4b85"
+      "url": "https://releases.nixos.org/nixos/unstable/nixos-25.11pre888552.b3d51a0365f6/nixexprs.tar.xz",
+      "hash": "1prwr19nnc66s594y32v8isbi0xr6qfk5vys96h08d3a9nb169d4"
     },
     "nixpkgs-vpncpin": {
       "type": "Git",

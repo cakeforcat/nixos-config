@@ -73,7 +73,7 @@
     })
     bitwarden-desktop
     wl-clipboard
-    #nvtopPackages.full
+    nvtopPackages.full
     warp
     discord
     fractal
