@@ -30,7 +30,6 @@ set options $options (fish_opt -s b -l boot)
 set options $options (fish_opt -s u -l update)
 set options $options (fish_opt -s p -l push)
 set options $options (fish_opt -s f -l force)
-set options $options (fish_opt -s l -l limited)
 set options $options (fish_opt -s c -l clean)
 
 
@@ -65,7 +64,6 @@ if set -q _flag_help
     echo "  -u,       --update        Update (n)pins"
     echo "  -p,       --push          Push changes to remote repository (if successful)"
     echo "  -f,       --force         Force rebuild even if no changes detected"
-    echo "  -l,       --limited       Resource limited rebuild"
     echo "  -c,       --clean         collect garbage after rebuild, and run rebuild boot to refresh boot entries"
     echo ""
     echo "for safety boot and push are mutually exclusive"
@@ -128,18 +126,22 @@ tput smcup
 clear
 # grab the latest nixpkgs path
 set -l nixpkgs_path (nix-instantiate --json --eval npins/default.nix -A nixpkgs.outPath | jq -r .)
-# limit jobs options
-set -l limited_opts ""
-if set -q _flag_limited
-    set limited_opts "--cores=4"
-    echo "Resource limited rebuild enabled"
-end
+# # limit jobs options
+# set -l limited_opts ""
+# if set -q _flag_limited
+#     set limited_opts "--cores=4"
+#     echo "Resource limited rebuild enabled"
+# end
 echo "Rebuilding NixOS configuration..."
+
+
 if set -q _flag_boot
-    sudo nixos-rebuild boot -I nixos-config=/home/julia/nixos-config/configuration.nix -I nixpkgs=$nixpkgs_path 2>&1 | tee rebuild.log
+    set -g rebuild_type "boot"
 else
-    sudo nixos-rebuild switch -I nixos-config=/home/julia/nixos-config/configuration.nix -I nixpkgs=$nixpkgs_path 2>&1 | tee rebuild.log
+    set -g rebuild_type "switch"
 end
+
+sudo nixos-rebuild $rebuild_type -I nixos-config=/home/julia/nixos-config/configuration.nix -I nixpkgs=$nixpkgs_path --show-trace 2>&1 | tee rebuild.log
 
 
 echo "Rebuild completed"
