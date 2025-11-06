@@ -38,7 +38,7 @@
     spotify
     pbpctrl
     gqrx
-    orca-slicer
+    #orca-slicer
     arduino-ide
     #sdrangel
     #googleearth-pro
