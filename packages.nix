@@ -123,7 +123,7 @@
     gnomeExtensions.color-picker
     gnomeExtensions.caffeine
     #cynthion
-    #packetry
+    packetry
 
     openscad-unstable
     # ungoogled-chromium
