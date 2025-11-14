@@ -128,6 +128,8 @@
     openscad-unstable
     # ungoogled-chromium
     mommy
+    wine64
+    winetricks
     #unstable.mission-center
     #bambu-studio
     (gnuradio.override {
