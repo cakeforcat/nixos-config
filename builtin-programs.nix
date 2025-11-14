@@ -11,7 +11,10 @@
     # steam
     steam = {
       enable = true;
-      extraCompatPackages = [ pkgs.proton-ge-bin ];
+      extraCompatPackages = with pkgs; [
+        proton-ge-bin
+        steamtinkerlaunch
+      ];
     };
     # GSConnect
     kdeconnect = {
