@@ -128,7 +128,7 @@
     openscad-unstable
     # ungoogled-chromium
     mommy
-    wine64
+    wine
     winetricks
     #unstable.mission-center
     #bambu-studio
