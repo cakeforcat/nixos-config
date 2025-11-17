@@ -87,7 +87,7 @@
     starship
     kicad
     prismlauncher
-    zulu24
+    zulu25
     mangohud
     mangojuice
 
