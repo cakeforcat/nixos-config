@@ -129,6 +129,7 @@
     # ungoogled-chromium
     mommy
     heroic
+    diebahn
     #unstable.mission-center
     #bambu-studio
     (gnuradio.override {
@@ -141,5 +142,6 @@
   environment.gnome.excludePackages = with pkgs; [
     gnome-console
     totem
+    showtime
   ];
 }
