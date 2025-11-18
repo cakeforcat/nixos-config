@@ -154,7 +154,7 @@ sleep 1
 tput rmcup
 
 # check if the rebuild was successful
-if rg --quiet "error:" rebuild.log
+if not rg --quiet "Done. The new configuration is " rebuild.log
     echo "Rebuild failed, exiting."
     popd
     exit_with_notification "Check rebuild.log for details."
