@@ -76,6 +76,7 @@
     nvtopPackages.full
     warp
     discord
+    signal-desktop
     fractal
 
     jellyfin
