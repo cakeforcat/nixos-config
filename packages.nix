@@ -123,6 +123,7 @@
     gnomeExtensions.fuzzy-app-search
     gnomeExtensions.color-picker
     gnomeExtensions.caffeine
+    gnomeExtensions.notification-timeout
     #cynthion
     packetry
 
