@@ -122,6 +122,7 @@
       "libvirtd"
       "plugdev"
       "dialout"
+      "gamemode"
     ];
     # packages = with pkgs; [
     #   thunderbird
