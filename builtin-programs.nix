@@ -16,6 +16,8 @@
         steamtinkerlaunch
       ];
     };
+    # gamemode
+    gamemode.enable = true;
     # GSConnect
     kdeconnect = {
       enable = true;
