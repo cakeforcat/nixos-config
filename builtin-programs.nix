@@ -93,6 +93,10 @@
     };
     # nix-ld
     nix-ld.enable = true;
-    wireshark.enable = true;
+    # wireshark
+    wireshark = {
+      enable = true;
+      package = pkgs.wireshark;
+    };
   };
 }
