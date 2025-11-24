@@ -16,8 +16,8 @@
     npins
     lenovo-legion # remember the kernel module !
     git-credential-oauth
-    vpnc
     wget
+    bat
     # turtle # broken rn
     gitui
     devenv
@@ -139,6 +139,8 @@
         lora_sdr
       ];
     })
+    busybox
+    mosquitto
   ];
 
   environment.gnome.excludePackages = with pkgs; [
