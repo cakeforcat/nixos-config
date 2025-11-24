@@ -93,5 +93,6 @@
     };
     # nix-ld
     nix-ld.enable = true;
+    wireshark.enable = true;
   };
 }
