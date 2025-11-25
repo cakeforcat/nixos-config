@@ -38,6 +38,7 @@
     spotify
     pbpctrl
     gqrx
+    winbox4
     #orca-slicer
     arduino-ide
     #sdrangel
