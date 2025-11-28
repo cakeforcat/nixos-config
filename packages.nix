@@ -129,7 +129,7 @@
     packetry
 
     openscad-unstable
-    # ungoogled-chromium
+    ungoogled-chromium
     mommy
     heroic
     diebahn
