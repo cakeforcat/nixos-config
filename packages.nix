@@ -30,10 +30,10 @@
     fd
     ripgrep
     fastfetch
-    # fish-lsp
+    #fish-lsp
     wlink
     gnome-firmware
-    # freecad
+    #freecad
     celluloid
     spotify
     pbpctrl
@@ -57,7 +57,7 @@
           github.copilot-chat
           grapecity.gc-excelviewer
           emroussel.atomize-atom-one-dark-theme
-          ms-python.vscode-pylance
+          #ms-python.vscode-pylance
           myriad-dreamin.tinymist
           mkhl.direnv
           tamasfe.even-better-toml
@@ -69,6 +69,12 @@
             publisher = "Leathong";
             version = "2.0.1";
             sha256 = "sha256-GTvn97POOVmie7mOD/Q3ivEHXmqb+hvgiic9pTWYS0s=";
+          }
+          {
+            name = "ty";
+            publisher = "astral-sh";
+            version = "2025.59.13322033";
+            sha256 = "sha256-nt5YD0eBeRtV1Hvwk1xN93+EN0b0g+srM+L2qfRlcgc=";
           }
         ];
     })
