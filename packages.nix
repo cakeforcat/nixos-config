@@ -131,6 +131,7 @@
     gnomeExtensions.color-picker
     gnomeExtensions.caffeine
     gnomeExtensions.notification-timeout
+    gnomeExtensions.tailscale-status
     #cynthion
     packetry
 
