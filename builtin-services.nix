@@ -47,6 +47,8 @@
     };
     # fwupd
     fwupd.enable = true;
+    # tailscale
+    tailscale.enable = true;
   };
   # dont start jellyfin on boot
   systemd.services.jellyfin.wantedBy = pkgs.lib.mkForce [ ];
