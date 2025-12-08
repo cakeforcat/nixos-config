@@ -22,8 +22,12 @@
     "root"
     "julia"
   ];
-  system.rebuild.enableNg = true;
+  # system.rebuild.enableNg = true; enabled by default in nixos 25.11
+  # system.nixos-init.enable = true;
   nix.settings.cores = 8;
+
+  # fix for broken build on stable
+  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.beta;
 
   # lix
   # nixpkgs.overlays = [
