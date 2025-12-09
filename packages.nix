@@ -112,6 +112,8 @@
     hunspellDicts.en_GB-ise
     hunspellDicts.pl_PL
 
+    gimp
+
     gnome-tweaks
     adw-gtk3
     gnomeExtensions.wallpaper-slideshow
