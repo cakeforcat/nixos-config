@@ -38,6 +38,7 @@
     spotify
     pbpctrl
     gqrx
+    tor-browser
     winbox4
     #orca-slicer
     arduino-ide
