@@ -9,15 +9,15 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "9bc9c1ab671eb1b610f549e15bc0b750ab987409",
-      "url": "https://github.com/thiagokokada/nix-alien/archive/9bc9c1ab671eb1b610f549e15bc0b750ab987409.tar.gz",
-      "hash": "0yrwqp9db4grr2lssyi337dr9id8nab89l8qb8n45npgqfhciaf4"
+      "revision": "0eb86c42d1e33e8dbcf771cb67446319517a0a57",
+      "url": "https://github.com/thiagokokada/nix-alien/archive/0eb86c42d1e33e8dbcf771cb67446319517a0a57.tar.gz",
+      "hash": "0ysl4vyrbdgvbk0pc89bxsczcc0hsgbywimggjs2b5n923bgfi01"
     },
     "nixpkgs": {
       "type": "Channel",
       "name": "nixos-unstable",
-      "url": "https://releases.nixos.org/nixos/unstable/nixos-26.05pre910362.2fbfb1d73d23/nixexprs.tar.xz",
-      "hash": "0c4hfkd8w52fmszknmwg5d8997qwv494pw2ffr9szz4iyw2idj68"
+      "url": "https://releases.nixos.org/nixos/unstable/nixos-26.05pre912002.1306659b587d/nixexprs.tar.xz",
+      "hash": "00igvm0x3anh57f159964snq6gf67v3v11pjwpji7ml1bdpwh76q"
     },
     "nixpkgs-vpncpin": {
       "type": "Git",
