@@ -193,6 +193,7 @@ if set -q _flag_clean
     sudo nix-collect-garbage -d 2>&1 | tee gc.log
     echo "Garbage collection completed."
     tput rmcup
+    tail -n 2 gc.log
 
     echo "refreshing boot entries..."
     tput smcup
