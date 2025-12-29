@@ -33,6 +33,7 @@
     #fish-lsp
     wlink
     # gnome-firmware
+    collision
     #freecad
     celluloid
     spotify
