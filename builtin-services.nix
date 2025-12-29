@@ -46,7 +46,7 @@
       openFirewall = true;
     };
     # fwupd
-    fwupd.enable = true;
+    # fwupd.enable = true;
     # tailscale
     tailscale.enable = true;
   };

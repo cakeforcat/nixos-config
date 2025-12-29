@@ -32,7 +32,7 @@
     fastfetch
     #fish-lsp
     wlink
-    gnome-firmware
+    # gnome-firmware
     #freecad
     celluloid
     spotify
