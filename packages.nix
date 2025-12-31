@@ -95,7 +95,12 @@
     qbittorrent
     smile
     starship
-    kicad
+    (kicad.override {
+      addons = with pkgs.kicadAddons; [
+        kikit
+        kikit-library
+      ];
+    })
     prismlauncher
     zulu25
     mangohud
