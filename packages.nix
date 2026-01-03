@@ -64,6 +64,7 @@
           mkhl.direnv
           tamasfe.even-better-toml
           ndonfris.fish-lsp
+          streetsidesoftware.code-spell-checker
         ]
         ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
           {
