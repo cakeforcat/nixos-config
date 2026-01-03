@@ -75,7 +75,7 @@
           {
             name = "ty";
             publisher = "astral-sh";
-            version = "2025.59.13322033";
+            version = "2025.80.0";
             sha256 = "sha256-nt5YD0eBeRtV1Hvwk1xN93+EN0b0g+srM+L2qfRlcgc=";
           }
         ];
@@ -151,11 +151,11 @@
     diebahn
     #unstable.mission-center
     #bambu-studio
-    (gnuradio.override {
-      extraPackages = with gnuradioPackages; [
-        lora_sdr
-      ];
-    })
+    # (gnuradio.override {
+    #   extraPackages = with gnuradioPackages; [
+    #     lora_sdr
+    #   ];
+    # })
     busybox
     mosquitto
     rpi-imager
