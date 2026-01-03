@@ -13,7 +13,7 @@
 # - fish
 # - git
 # - jq (for parsing JSON)
-# - alejandra (for nix autoformatting)
+# - nixfmt
 # - notify-send (for notifications)
 # - ripgrep (for checking rebuild log)
 #
@@ -22,6 +22,8 @@
 # https://jade.fyi/blog/pinning-nixos-with-npins/
 # https://piegames.de/dumps/pinning-nixos-with-npins-revisited/
 # https://discourse.nixos.org/t/pinning-nixos-with-npins/63721/10
+#
+# https://cakeforcat.dev/blog/npins.html
 
 # some script arguments
 set -l options (fish_opt -s h -l help)
