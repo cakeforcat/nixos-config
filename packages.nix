@@ -88,6 +88,7 @@
     discord
     signal-desktop
     fractal
+    foliate
 
     jellyfin
     jellyfin-web
