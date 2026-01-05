@@ -18,20 +18,6 @@
       "name": "nixos-unstable",
       "url": "https://releases.nixos.org/nixos/unstable/nixos-26.05pre921484.fb7944c166a3/nixexprs.tar.xz",
       "hash": "sha256-3xDI4xtzovwqE/eAxCwmXxUqBg6Yoam2L1u0IwRNhW4="
-    },
-    "nixpkgs-vpncpin": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "NixOS",
-        "repo": "nixpkgs"
-      },
-      "branch": "nixos-25.05",
-      "submodules": false,
-      "revision": "59133ee770406f605d61698bc4f1a89efcf461d5",
-      "url": "https://github.com/NixOS/nixpkgs/archive/59133ee770406f605d61698bc4f1a89efcf461d5.tar.gz",
-      "hash": "sha256-AfpbEbTYLnF142lvX/bAovSRIYOXWaTTbP1+kR2Xi2w=",
-      "frozen": true
     }
   },
   "version": 7
