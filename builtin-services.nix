@@ -49,6 +49,8 @@
     # fwupd.enable = true;
     # tailscale
     tailscale.enable = true;
+    # auto timezone
+    automatic-timezoned.enable = true;
   };
   # dont start jellyfin on boot
   systemd.services.jellyfin.wantedBy = pkgs.lib.mkForce [ ];

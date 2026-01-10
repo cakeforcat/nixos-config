@@ -94,7 +94,8 @@
   };
 
   # Set your time zone.
-  time.timeZone = "Europe/London";
+  # now dynamic using automatic-timezoned
+  #time.timeZone = "Europe/London";
 
   # Select internationalisation properties.
   i18n = {
