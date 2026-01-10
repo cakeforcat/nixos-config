@@ -50,8 +50,9 @@
     # tailscale
     tailscale.enable = true;
     # auto timezone
-    automatic-timezoned.enable = true;
-    geoclue2.geoProviderUrl = "https://api.beacondb.net/v1/geolocate";
+    # ugh borked for now
+    # automatic-timezoned.enable = true;
+    # geoclue2.geoProviderUrl = "https://api.beacondb.net/v1/geolocate";
   };
   # dont start jellyfin on boot
   systemd.services.jellyfin.wantedBy = pkgs.lib.mkForce [ ];

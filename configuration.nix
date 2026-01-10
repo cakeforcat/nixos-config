@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  lib,
   ...
 }:
 {
@@ -95,7 +96,9 @@
 
   # Set your time zone.
   # now dynamic using automatic-timezoned
+  # ok timezoned is borked rn, lets go to gnome
   #time.timeZone = "Europe/London";
+  time.timeZone = lib.mkForce null;
 
   # Select internationalisation properties.
   i18n = {
