@@ -143,6 +143,7 @@
     gnomeExtensions.caffeine
     gnomeExtensions.notification-timeout
     gnomeExtensions.tailscale-status
+    gnomeExtensions.custom-command-toggle
     #cynthion
     packetry
 
