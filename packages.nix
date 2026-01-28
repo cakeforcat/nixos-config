@@ -76,8 +76,8 @@
           {
             name = "ty";
             publisher = "astral-sh";
-            version = "2025.80.0";
-            sha256 = "sha256-keLL62w9oRLMRH++xuwlarIK8S4VWb3ArQ+TPy99mNE=";
+            version = "2026.8.0";
+            sha256 = "sha256-cfIpCG8L8+Kf/Fka8CRU8gg8FgMO+TYRfdvMJ5J9h+Q=";
           }
         ];
     })
