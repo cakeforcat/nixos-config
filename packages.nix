@@ -125,6 +125,7 @@
 
     gnome-tweaks
     adw-gtk3
+    refine
     gnomeExtensions.wallpaper-slideshow
     gnomeExtensions.just-perfection
     gnomeExtensions.clipboard-indicator
