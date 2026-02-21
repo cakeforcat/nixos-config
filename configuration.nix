@@ -29,6 +29,23 @@
 
   # fix for broken build on stable
   hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.beta;
+  # Apply CachyOS kernel 6.19 patch to NVIDIA latest driver
+  # hardware.nvidia.package =
+  #   let
+  #     base = config.boot.kernelPackages.nvidiaPackages.latest;
+  #     cachyos-nvidia-patch = pkgs.fetchpatch {
+  #       url = "https://raw.githubusercontent.com/CachyOS/CachyOS-PKGBUILDS/master/nvidia/nvidia-utils/kernel-6.19.patch";
+  #       sha256 = "sha256-YuJjSUXE6jYSuZySYGnWSNG5sfVei7vvxDcHx3K+IN4=";
+  #     };
+  #     # Patch the appropriate driver based on config.hardware.nvidia.open
+  #     driverAttr = if config.hardware.nvidia.open then "open" else "bin";
+  #   in
+  #   base
+  #   // {
+  #     ${driverAttr} = base.${driverAttr}.overrideAttrs (oldAttrs: {
+  #       patches = (oldAttrs.patches or [ ]) ++ [ cachyos-nvidia-patch ];
+  #     });
+  #   };
 
   # lix
   # nixpkgs.overlays = [
@@ -43,6 +60,12 @@
   #   })
   # ];
   nix.package = pkgs.lixPackageSets.latest.lix;
+
+  # mdns enable, Note that “files” is always prepended, and “dns” and “myhostname” are always appended.
+  system.nssDatabases.hosts = [
+    "mdns4_minimal"
+    "[NOTFOUND=return]"
+  ];
 
   # disable broken sleep
   systemd.sleep.extraConfig = ''
