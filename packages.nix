@@ -46,6 +46,7 @@
     #sdrangel
     #googleearth-pro
     proton-vpn-cli
+    protonvpn-gui
     wireguard-tools
 
     (vscode-with-extensions.override {
