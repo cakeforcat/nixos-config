@@ -45,6 +45,7 @@
     arduino-ide
     #sdrangel
     #googleearth-pro
+    proton-vpn-cli
 
     (vscode-with-extensions.override {
       vscode = vscodium;

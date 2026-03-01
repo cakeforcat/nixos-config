@@ -115,6 +115,7 @@
         networkmanager-vpnc
       ];
     };
+    firewall.checkReversePath = false;
   };
 
   # Set your time zone.
