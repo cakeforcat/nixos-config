@@ -113,6 +113,7 @@
       enable = true;
       plugins = with pkgs; [
         networkmanager-vpnc
+        networkmanager-openvpn
       ];
     };
     firewall.checkReversePath = false;
