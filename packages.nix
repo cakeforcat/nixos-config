@@ -46,6 +46,7 @@
     #sdrangel
     #googleearth-pro
     proton-vpn-cli
+    wireguard-tools
 
     (vscode-with-extensions.override {
       vscode = vscodium;
