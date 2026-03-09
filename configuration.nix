@@ -29,23 +29,6 @@
 
   # fix for broken build on stable
   hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.beta;
-  # Apply CachyOS kernel 6.19 patch to NVIDIA latest driver
-  # hardware.nvidia.package =
-  #   let
-  #     base = config.boot.kernelPackages.nvidiaPackages.latest;
-  #     cachyos-nvidia-patch = pkgs.fetchpatch {
-  #       url = "https://raw.githubusercontent.com/CachyOS/CachyOS-PKGBUILDS/master/nvidia/nvidia-utils/kernel-6.19.patch";
-  #       sha256 = "sha256-YuJjSUXE6jYSuZySYGnWSNG5sfVei7vvxDcHx3K+IN4=";
-  #     };
-  #     # Patch the appropriate driver based on config.hardware.nvidia.open
-  #     driverAttr = if config.hardware.nvidia.open then "open" else "bin";
-  #   in
-  #   base
-  #   // {
-  #     ${driverAttr} = base.${driverAttr}.overrideAttrs (oldAttrs: {
-  #       patches = (oldAttrs.patches or [ ]) ++ [ cachyos-nvidia-patch ];
-  #     });
-  #   };
 
   # lix
   # nixpkgs.overlays = [
@@ -68,12 +51,12 @@
   ];
 
   # disable broken sleep
-  systemd.sleep.extraConfig = ''
-    AllowSuspend=no
-    AllowHibernation=no
-    AllowHybridSleep=no
-    AllowSuspendThenHibernate=no
-  '';
+  systemd.sleep.settings.Sleep = {
+    AllowSuspend = "no";
+    AllowHibernation = "no";
+    AllowHybridSleep = "no";
+    AllowSuspendThenHibernate = "no";
+  };
 
   # systemd.slices.anti-hungry.sliceConfig = {
   #   CPUAccounting = true;
