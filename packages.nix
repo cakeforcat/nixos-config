@@ -85,6 +85,7 @@
         ];
     })
     bitwarden-desktop
+    proton-pass
     wl-clipboard
     nvtopPackages.full
     warp
