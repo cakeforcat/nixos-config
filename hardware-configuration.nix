@@ -37,10 +37,10 @@
     ];
   };
 
-  # fileSystems."/mediadisk" = {
-  #   device = "/dev/disk/by-uuid/38c66e61-e4f3-4735-849a-d1cb8fae0124";
-  #   fsType = "ext4";
-  # };
+  fileSystems."/mediadisk" = {
+    device = "/dev/disk/by-uuid/38c66e61-e4f3-4735-849a-d1cb8fae0124";
+    fsType = "ext4";
+  };
 
   swapDevices = [
     { device = "/dev/disk/by-uuid/0830fb09-35df-4e16-8a99-f92364faf997"; }
