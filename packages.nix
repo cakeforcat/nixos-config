@@ -45,8 +45,7 @@
     arduino-ide
     #sdrangel
     #googleearth-pro
-    proton-vpn-cli
-    protonvpn-gui
+    proton-vpn
     wireguard-tools
 
     (vscode-with-extensions.override {
