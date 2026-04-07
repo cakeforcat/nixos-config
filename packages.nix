@@ -163,6 +163,7 @@
     busybox
     mosquitto
     rpi-imager
+    clementine
   ];
 
   environment.gnome.excludePackages = with pkgs; [
