@@ -27,6 +27,8 @@
   # system.nixos-init.enable = true;
   nix.settings.cores = 8;
 
+  nix.settings.log-format = "multiline-with-logs";
+
   # fix for broken build on stable
   hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.beta;
 
