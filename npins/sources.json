@@ -9,15 +9,15 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "406827a0064e940578c18be868198aa06f443792",
-      "url": "https://github.com/thiagokokada/nix-alien/archive/406827a0064e940578c18be868198aa06f443792.tar.gz",
-      "hash": "sha256-SP8U4AhZbNaoQtZGAzVIkw56pOObacxcArqPNjc3FQc="
+      "revision": "4c5e52dda0d6ab3de814e364046769321d3e1021",
+      "url": "https://github.com/thiagokokada/nix-alien/archive/4c5e52dda0d6ab3de814e364046769321d3e1021.tar.gz",
+      "hash": "sha256-TRts0fKUPFcf1i6rZHFGUDTfti/x3oKEg/CqsPRpSgs="
     },
     "nixpkgs": {
       "type": "Channel",
       "name": "nixos-unstable",
-      "url": "https://releases.nixos.org/nixos/unstable/nixos-26.05pre977467.4c1018dae018/nixexprs.tar.xz",
-      "hash": "sha256-WGjBfvXv/mcg5yBg+AtK1Q3FHyXfjAAeJROmg7DLYfM="
+      "url": "https://releases.nixos.org/nixos/unstable/nixos-26.05pre982522.b12141ef619e/nixexprs.tar.xz",
+      "hash": "sha256-qH3mBrZnNsPdwpAgvG2Olgzsp5kt+Sibpm1tx1pxkcQ="
     }
   },
   "version": 7
