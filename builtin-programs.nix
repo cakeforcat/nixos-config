@@ -52,9 +52,9 @@
         init.defaultBranch = "main";
         pull.rebase = true;
         user = {
-          email = "cakeforcat@gmail.com";
+          email = "julia@cakeforcat.dev";
           name = "cakeforcat";
-          signingkey = "0693518A0F875C13";
+          signingkey = "BDA0DD2ADD58843F";
         };
         commit.gpgsign = true;
       };
