@@ -53,12 +53,6 @@
     # ugh borked for now
     # automatic-timezoned.enable = true;
     # geoclue2.geoProviderUrl = "https://api.beacondb.net/v1/geolocate";
-
-    #testing ds4u
-    udev.extraRules = ''
-      SUBSYSTEM=="hidraw", ATTRS{idVendor}=="054c", ATTRS{idProduct}=="0ce6", MODE="0664", GROUP="input", TAG+="uaccess"
-      SUBSYSTEM=="hidraw", ATTRS{idVendor}=="054c", ATTRS{idProduct}=="0df2", MODE="0664", GROUP="input", TAG+="uaccess"
-    '';
   };
   # dont start jellyfin on boot
   systemd.services.jellyfin.wantedBy = pkgs.lib.mkForce [ ];

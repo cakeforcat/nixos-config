@@ -94,9 +94,9 @@
     # nix-ld
     nix-ld.enable = true;
     # wireshark
-    wireshark = {
-      enable = true;
-      package = pkgs.wireshark;
-    };
+    # wireshark = {
+    #   enable = true;
+    #   package = pkgs.wireshark;
+    # };
   };
 }

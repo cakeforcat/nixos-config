@@ -18,8 +18,8 @@ in
   environment.etc = {
     "nixos/nixpkgs".source = builtins.storePath pkgs.path;
   };
-  # command-not-found fix
-  programs.command-not-found.dbPath = "/etc/nixos/nixpkgs/programs.sqlite";
+  # command-not-found fix (no longer needed yay)
+  # programs.command-not-found.dbPath = "/etc/nixos/nixpkgs/programs.sqlite";
 
   # pinning
   # nixpkgs.config.packageOverrides = pkgs: {
