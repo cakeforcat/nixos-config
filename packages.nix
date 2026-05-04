@@ -14,6 +14,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     npins
+    nvd
     lenovo-legion # remember the kernel module !
     git-credential-oauth
     wget
@@ -57,7 +58,6 @@
           ms-python.python
           ms-python.debugpy
           charliermarsh.ruff
-          github.copilot
           github.copilot-chat
           grapecity.gc-excelviewer
           emroussel.atomize-atom-one-dark-theme

@@ -46,6 +46,18 @@
   # ];
   nix.package = pkgs.lixPackageSets.latest.lix;
 
+  # Show package version changes on switch
+  system.activationScripts.diff = {
+    supportsDryActivation = true;
+    text = ''
+      if [[ -e /run/current-system ]]; then
+        echo "--- diff to current-system"
+        ${pkgs.nvd}/bin/nvd --nix-bin-dir=${config.nix.package}/bin diff /run/current-system "$systemConfig"
+        echo "---"
+      fi
+    '';
+  };
+
   # mdns enable, Note that “files” is always prepended, and “dns” and “myhostname” are always appended.
   system.nssDatabases.hosts = [
     "mdns4_minimal"
