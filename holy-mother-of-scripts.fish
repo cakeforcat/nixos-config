@@ -34,12 +34,20 @@ set options $options (fish_opt -s p -l push)
 set options $options (fish_opt -s f -l force)
 set options $options (fish_opt -s c -l clean)
 
-
-
 argparse --exclusive "boot,push" $options -- $argv
 
-function exit_with_notification
-    set -l message $argv[1]
+set -g absolute_nixos_config_path "/home/$USER/nixos-config"
+
+if set -q _flag_boot
+    set -g rebuild_type "boot"
+else
+    set -g rebuild_type "switch"
+end
+
+function exit_with_notification -a message
+    if test "$PWD" = "$absolute_nixos_config_path"
+        popd
+    end
     notify-send --transient --icon=software-update-urgent --app-name=NIXIT "Rebuild Failed: $message"
     echo $message
     exit 1
@@ -54,8 +62,101 @@ function push_to_remote
     end
 end
 
-# handle help flag
-if set -q _flag_help
+function update_npins
+    echo "Updating npins"
+    npins update
+end
+
+function edit_config
+    if set -q _flag_edit[1]
+        if not test -f $_flag_edit
+            exit_with_notification "File $_flag_edit does not exist."
+        end
+        $EDITOR $_flag_edit
+    else
+        $EDITOR configuration.nix
+    end
+end
+
+function autoformat
+    if not nixfmt -q *.nix # noooo dont touch my submodules
+        exit_with_notification "Nixfmt formatting failed"
+    end
+end
+
+function show_diff
+    git diff -U0
+end
+
+function fancy_rebuild -a type metatask
+    echo $metatask
+
+    # grab the latest nixpkgs path
+    set -l nixpkgs_path (nix-instantiate --json --eval npins/default.nix -A nixpkgs.outPath | jq -r .)
+
+    # move to alt terminal buffer
+    tput smcup
+    clear
+    echo $metatask
+
+    # REBUILD
+    sudo nixos-rebuild $type -I nixos-config=$absolute_nixos_config_path/configuration.nix -I nixpkgs=$nixpkgs_path --show-trace 2>&1 | tee rebuild.log
+
+    # exit slowly
+    echo "Rebuild completed"
+    echo "Exit in 3..."
+    sleep 1
+    echo "Exit in 2..."
+    sleep 1
+    echo "Exit in 1..."
+    sleep 1
+    tput rmcup
+end
+
+function check_rebuild
+    # check if the rebuild was successful
+    if not rg --quiet "Done. The new configuration is " rebuild.log
+        echo "Rebuild failed, exiting."
+        return 1
+        # exit_with_notification "Check rebuild.log for details."
+    end
+    if rg --quiet "SIGKILL" rebuild.log
+        echo "Rebuild was killed (probably out of memory), exiting."
+        return 1
+        # exit_with_notification "Check rebuild.log for details."
+    end
+end
+
+function commit_build
+    echo "Rebuild successful, committing changes..."
+    set -l curr_json (nixos-rebuild list-generations --json | jq -r '.[] | select (.current == true)')
+    set -l curr_generation (echo $curr_json | jq -r '"\(.generation)"')
+    # set -l curr_date (echo $curr_json | jq -r '"\(.date)"')
+    set -l curr_nixos (echo $curr_json | jq -r '"\(.nixosVersion)"')
+    set -l curr_nixos_major (echo $curr_nixos | string split -f "1,2" . | string join .)
+    set -l curr_kernel (echo $curr_json | jq -r '"\(.kernelVersion)"')
+    git add npins/sources.json
+    git add *.nix
+    git commit -m "Gen: $curr_generation NixOS: $curr_nixos_major Kernel: $curr_kernel"
+    echo "Changes committed successfully."
+end
+
+function collect_garbage
+    echo "Collecting garbage..."
+    tput smcup
+    clear
+    echo "Collecting garbage..."
+    sudo nix-collect-garbage -d 2>&1 | tee gc.log
+    echo "Garbage collection completed."
+    tput rmcup
+    tail -n 2 gc.log
+end
+
+function refresh_boot_entries
+    fancy_rebuild boot "refreshing boot entries..."
+end
+
+function print_help
     echo "Usage: holy-mother-of-scripts.sh [OPTIONS]"
     echo "A script to rebuild NixOS configuration and commit changes."
     echo ""
@@ -70,7 +171,12 @@ if set -q _flag_help
     echo ""
     echo "for safety boot and push are mutually exclusive"
     echo "If you want to push changes, use the --push flag after a successful reboot."
-    return 0
+    exit 0
+end
+
+# handle help flag
+if set -q _flag_help
+    print_help
 end
 
 # go to config root
@@ -78,107 +184,31 @@ pushd ~/nixos-config/
 
 # handle update flag
 if set -q _flag_update
-    echo "Updating npins"
-    npins update
+    update_npins
 end
-
 
 # handle edit flag
 if set -q _flag_edit
-    if set -q _flag_edit[1]
-        if not test -f $_flag_edit
-            exit_with_notification "File $_flag_edit does not exist."
-        end
-        $EDITOR $_flag_edit
+    edit_config
+end
+
+# core rebuild logic
+if not git diff --quiet '*.nix'; or not git diff --quiet 'npins/sources.json'; or set -q _flag_force
+    echo "Proceeding with rebuild."
+    autoformat
+    git diff -U0
+    fancy_rebuild "$rebuild_type" "Rebuilding NixOS configuration..."
+    if not check_rebuild
+        # revert npins
+        git restore 'npins/sources.json'
+        # fail if bad rebuild
+        exit_with_notification "Check rebuild.log for details."
     else
-        $EDITOR configuration.nix
+        commit_build
     end
-end
-
-# Early return if no changes were detected
-if not git diff --quiet '*.nix'
-    echo "Changes detected, proceeding with rebuild."
-else if not git diff --quiet 'npins/sources.json'
-    echo "No changes detected, but pins updated, proceeding with rebuild."
-else if set -q _flag_force
-    echo "No changes detected, but force rebuild requested."
-else if set -q _flag_push 
-    echo "No changes detected, no pins updated, but push requested"
-    push_to_remote
-    popd
-    return 0
 else
-    echo "No changes detected, exiting."
-    popd
-    return 0
+    echo "Skipping Rebuild"
 end
-
-# autoformat nix files
-if not nixfmt -q *.nix # noooo dont touch my submodules
-    popd
-    exit_with_notification "Nixfmt formatting failed"
-end
-
-# show the diff
-git diff -U0
-
-# start the rebuild
-echo "Rebuilding NixOS configuration..."
-tput smcup
-clear
-# grab the latest nixpkgs path
-set -l nixpkgs_path (nix-instantiate --json --eval npins/default.nix -A nixpkgs.outPath | jq -r .)
-# # limit jobs options
-# set -l limited_opts ""
-# if set -q _flag_limited
-#     set limited_opts "--cores=4"
-#     echo "Resource limited rebuild enabled"
-# end
-echo "Rebuilding NixOS configuration..."
-
-
-if set -q _flag_boot
-    set -g rebuild_type "boot"
-else
-    set -g rebuild_type "switch"
-end
-
-sudo nixos-rebuild $rebuild_type -I nixos-config=/home/julia/nixos-config/configuration.nix -I nixpkgs=$nixpkgs_path --show-trace 2>&1 | tee rebuild.log
-
-
-echo "Rebuild completed"
-echo "Exit in 3..."
-sleep 1
-echo "Exit in 2..."
-sleep 1
-echo "Exit in 1..."
-sleep 1
-tput rmcup
-
-# check if the rebuild was successful
-if not rg --quiet "Done. The new configuration is " rebuild.log
-    echo "Rebuild failed, exiting."
-    popd
-    exit_with_notification "Check rebuild.log for details."
-end
-
-if rg --quiet "SIGKILL" rebuild.log
-    echo "Rebuild was killed (probably out of memory), exiting."
-    popd
-    exit_with_notification "Check rebuild.log for details."
-end
-
-echo "Rebuild successful, committing changes..."
-set -l curr_json (nixos-rebuild list-generations --json | jq -r '.[] | select (.current == true)')
-set -l curr_generation (echo $curr_json | jq -r '"\(.generation)"')
-# set -l curr_date (echo $curr_json | jq -r '"\(.date)"')
-set -l curr_nixos (echo $curr_json | jq -r '"\(.nixosVersion)"')
-set -l curr_nixos_major (echo $curr_nixos | string split -f "1,2" . | string join .)
-set -l curr_kernel (echo $curr_json | jq -r '"\(.kernelVersion)"')
-git add npins/sources.json
-git add *.nix
-git commit -m "Gen: $curr_generation NixOS: $curr_nixos_major Kernel: $curr_kernel"
-echo "Changes committed successfully."
 
 # handle push flag
 if set -q _flag_push
@@ -187,24 +217,8 @@ end
 
 # handle clean flag
 if set -q _flag_clean
-
-    echo "Collecting garbage..."
-    tput smcup
-    clear
-    echo "Collecting garbage..."
-    sudo nix-collect-garbage -d 2>&1 | tee gc.log
-    echo "Garbage collection completed."
-    tput rmcup
-    tail -n 2 gc.log
-
-    echo "refreshing boot entries..."
-    tput smcup
-    clear
-    echo "refreshing boot entries..."
-    sudo nixos-rebuild boot -I nixos-config=/home/julia/nixos-config/configuration.nix -I nixpkgs=$nixpkgs_path 2>&1 | tee refresh-boot.log
-    echo "Boot entries refreshed."
-    tput rmcup
-
+    collect_garbage
+    refresh_boot_entries
 end
 
 # finish successfully
