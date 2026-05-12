@@ -58,7 +58,6 @@
           ms-python.python
           ms-python.debugpy
           charliermarsh.ruff
-          github.copilot-chat
           grapecity.gc-excelviewer
           emroussel.atomize-atom-one-dark-theme
           #ms-python.vscode-pylance
@@ -78,8 +77,8 @@
           {
             name = "ty";
             publisher = "astral-sh";
-            version = "2026.8.0";
-            sha256 = "sha256-cfIpCG8L8+Kf/Fka8CRU8gg8FgMO+TYRfdvMJ5J9h+Q=";
+            version = "2026.46.0";
+            sha256 = "sha256-eBQCNvNCkmyvBjAfaF/i4eJ6pnlR50DAT4SyY/e1Nc8=";
           }
         ];
     })
