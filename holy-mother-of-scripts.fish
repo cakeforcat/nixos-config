@@ -33,6 +33,7 @@ set options $options (fish_opt -s u -l update)
 set options $options (fish_opt -s p -l push)
 set options $options (fish_opt -s f -l force)
 set options $options (fish_opt -s c -l clean)
+set options $options (fish_opt -s s -l system)
 
 argparse --exclusive "boot,push" $options -- $argv
 
@@ -48,7 +49,7 @@ function exit_with_notification -a message
     if test "$PWD" = "$absolute_nixos_config_path"
         popd
     end
-    notify-send --transient --icon=software-update-urgent --app-name=NIXIT "Rebuild Failed: $message"
+    notify-send --transient --icon=software-update-urgent --app-name=NIXIT "NIXIT Failed: $message"
     echo $message
     exit 1
 end
@@ -141,6 +142,10 @@ function commit_build
     echo "Changes committed successfully."
 end
 
+function print_system
+    nixos-rebuild list-generations --json | jq -r '.[] | select (.current == true)'
+end
+
 function collect_garbage
     echo "Collecting garbage..."
     tput smcup
@@ -168,11 +173,27 @@ function print_help
     echo "  -p,       --push          Push changes to remote repository (if successful)"
     echo "  -f,       --force         Force rebuild even if no changes detected"
     echo "  -c,       --clean         collect garbage after rebuild, and run rebuild boot to refresh boot entries"
+    echo "  -s,       --system        print current generation info"
     echo ""
     echo "for safety boot and push are mutually exclusive"
     echo "If you want to push changes, use the --push flag after a successful reboot."
     exit 0
 end
+
+# function exit_handler --on-signal SIGINT
+#     if test "$PWD" = "$absolute_nixos_config_path"
+#         popd
+#     end
+#     echo "interrupted!"
+# end
+
+
+
+# -------------------------------------------------------------------------
+# ---------------------------Entry Point-----------------------------------
+#--------------------------------------------------------------------------
+
+
 
 # handle help flag
 if set -q _flag_help
@@ -221,8 +242,14 @@ if set -q _flag_clean
     refresh_boot_entries
 end
 
+# handle system flag
+if set -q _flag_system
+    echo "Current system:"
+    print_system
+end
+
 # finish successfully
 popd
-echo "NixOS configuration rebuild and commit completed successfully."
-notify-send --transient --icon=software-update-available --app-name=NIXIT "Rebuild Successful" 
+echo "NIXIT completed successfully."
+notify-send --transient --icon=software-update-available --app-name=NIXIT "NIXIT Successful" 
 return 0
