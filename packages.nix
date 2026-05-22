@@ -55,7 +55,7 @@
         with pkgs.vscode-extensions;
         [
           jnoortheen.nix-ide
-          ms-python.python
+          #ms-python.python
           ms-python.debugpy
           charliermarsh.ruff
           grapecity.gc-excelviewer
@@ -78,7 +78,7 @@
             name = "ty";
             publisher = "astral-sh";
             version = "2026.46.0";
-            sha256 = "sha256-eBQCNvNCkmyvBjAfaF/i4eJ6pnlR50DAT4SyY/e1Nc8=";
+            sha256 = "sha256-nGCPV5NSil5hYsoZ1jvKuhC3i9E4XyTvy/PbHI6be9g=";
           }
         ];
     })
