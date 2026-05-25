@@ -55,7 +55,7 @@
         with pkgs.vscode-extensions;
         [
           jnoortheen.nix-ide
-          #ms-python.python
+          ms-python.python
           ms-python.debugpy
           charliermarsh.ruff
           grapecity.gc-excelviewer
