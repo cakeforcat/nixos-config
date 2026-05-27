@@ -18,6 +18,10 @@
     ./plymouth.nix
   ];
 
+  virtualisation.docker = {
+    enable = true;
+  };
+
   # extra nix settings
   nix.settings.trusted-users = [
     "root"
@@ -152,6 +156,7 @@
       "plugdev"
       "dialout"
       "gamemode"
+      "docker"
     ];
     # packages = with pkgs; [
     #   thunderbird
