@@ -25,7 +25,7 @@
     desktopManager.gnome.enable = true;
 
     # Enable CUPS to print documents.
-    # printing.enable = true;
+    printing.enable = true;
 
     # Enable sound with pipewire.
     pulseaudio.enable = false;
