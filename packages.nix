@@ -89,6 +89,7 @@
     nvtopPackages.full
     warp
     discord
+    vesktop
     signal-desktop
     fractal
     foliate
