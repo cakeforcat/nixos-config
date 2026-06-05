@@ -54,9 +54,11 @@
         user = {
           email = "julia@cakeforcat.dev";
           name = "cakeforcat";
-          signingkey = "BDA0DD2ADD58843F";
+          signingkey = "~/.ssh/id_ed25519.pub";
         };
         commit.gpgsign = true;
+        gpg.format = "ssh";
+        gpg.ssh.allowedSignersFile = "~/.config/git/allowed_signers";
       };
     };
     # gpg
