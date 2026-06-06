@@ -60,7 +60,7 @@
           charliermarsh.ruff
           grapecity.gc-excelviewer
           emroussel.atomize-atom-one-dark-theme
-          #ms-python.vscode-pylance
+          ms-python.vscode-pylance
           myriad-dreamin.tinymist
           mkhl.direnv
           tamasfe.even-better-toml
@@ -74,12 +74,12 @@
             version = "2.0.1";
             sha256 = "sha256-GTvn97POOVmie7mOD/Q3ivEHXmqb+hvgiic9pTWYS0s=";
           }
-          {
-            name = "ty";
-            publisher = "astral-sh";
-            version = "2026.50.0";
-            sha256 = "sha256-m/grmN4egy8RZ+B8dysDibUP4k5FBiAseXHPYgg6Dk0=";
-          }
+          # {
+          #   name = "ty";
+          #   publisher = "astral-sh";
+          #   version = "2026.50.0";
+          #   sha256 = "sha256-m/grmN4egy8RZ+B8dysDibUP4k5FBiAseXHPYgg6Dk0=";
+          # }
         ];
     })
     #bitwarden-desktop
