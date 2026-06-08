@@ -1,5 +1,18 @@
 {
   "pins": {
+    "ds4u-nixpkgs": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "cakeforcat",
+        "repo": "nixpkgs"
+      },
+      "branch": "init-ds4u",
+      "submodules": false,
+      "revision": "ad7cd76ac05b68648158eb7497cc24e8c66bea92",
+      "url": "https://github.com/cakeforcat/nixpkgs/archive/ad7cd76ac05b68648158eb7497cc24e8c66bea92.tar.gz",
+      "hash": "sha256-O/HtilsbsT8QBWR60VMYbmoR3WKDFphr+J8U7z8ohac="
+    },
     "nix-alien": {
       "type": "Git",
       "repository": {

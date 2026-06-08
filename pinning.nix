@@ -21,10 +21,9 @@ in
   # command-not-found fix (no longer needed yay)
   # programs.command-not-found.dbPath = "/etc/nixos/nixpkgs/programs.sqlite";
 
-  # pinning
-  # nixpkgs.config.packageOverrides = pkgs: {
-  #   vpncpin = import sources.nixpkgs-vpncpin { config = config.nixpkgs.config; };
-  # };
+  nixpkgs.config.packageOverrides = pkgs: {
+    ds4upin = import sources.ds4u-nixpkgs { config = config.nixpkgs.config; };
+  };
 
   # lix
   # imports = [(import "${sources.lix-module}/module.nix" {lix = sources.lix-src;})];
