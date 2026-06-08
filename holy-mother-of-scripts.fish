@@ -136,7 +136,7 @@ function commit_build
     set -l curr_nixos (echo $curr_json | jq -r '"\(.nixosVersion)"')
     set -l curr_nixos_major (echo $curr_nixos | string split -f "1,2" . | string join .)
     set -l curr_kernel (echo $curr_json | jq -r '"\(.kernelVersion)"')
-    git add npins/sources.json
+    git add npins/*
     git add *.nix
     git commit -m "Gen: $curr_generation NixOS: $curr_nixos_major Kernel: $curr_kernel"
     echo "Changes committed successfully."
