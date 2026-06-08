@@ -89,7 +89,7 @@ function show_diff
     git diff -U0
 end
 
-function fancy_rebuild -a type metatask
+function fancy_rebuild -a type metatask log
     echo $metatask
 
     # grab the latest nixpkgs path
@@ -101,7 +101,7 @@ function fancy_rebuild -a type metatask
     echo $metatask
 
     # REBUILD
-    sudo nixos-rebuild $type -I nixos-config=$absolute_nixos_config_path/configuration.nix -I nixpkgs=$nixpkgs_path --show-trace 2>&1 | tee rebuild.log
+    sudo nixos-rebuild $type -I nixos-config=$absolute_nixos_config_path/configuration.nix -I nixpkgs=$nixpkgs_path --show-trace 2>&1 | tee $log
 
     # exit slowly
     echo "Rebuild completed"
@@ -158,7 +158,7 @@ function collect_garbage
 end
 
 function refresh_boot_entries
-    fancy_rebuild boot "refreshing boot entries..."
+    fancy_rebuild boot "refreshing boot entries..." refresh-boot.log
 end
 
 function print_help
@@ -218,7 +218,7 @@ if not git diff --quiet '*.nix'; or not git diff --quiet 'npins/sources.json'; o
     echo "Proceeding with rebuild."
     autoformat
     git diff -U0
-    fancy_rebuild "$rebuild_type" "Rebuilding NixOS configuration..."
+    fancy_rebuild "$rebuild_type" "Rebuilding NixOS configuration..." rebuild.log
     if not check_rebuild
         # revert npins
         git restore 'npins/sources.json'
