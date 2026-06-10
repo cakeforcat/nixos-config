@@ -9,9 +9,9 @@
       },
       "branch": "init-ds4u",
       "submodules": false,
-      "revision": "ad7cd76ac05b68648158eb7497cc24e8c66bea92",
-      "url": "https://github.com/cakeforcat/nixpkgs/archive/ad7cd76ac05b68648158eb7497cc24e8c66bea92.tar.gz",
-      "hash": "sha256-O/HtilsbsT8QBWR60VMYbmoR3WKDFphr+J8U7z8ohac="
+      "revision": "de9ed7a7595f7c3d0d14ba7890e8c48503b872e1",
+      "url": "https://github.com/cakeforcat/nixpkgs/archive/de9ed7a7595f7c3d0d14ba7890e8c48503b872e1.tar.gz",
+      "hash": "sha256-u8tKaHlBTlL1O0QKizlUq2jMAI4M2Sdp0z97YHfDwCs="
     },
     "nix-alien": {
       "type": "Git",

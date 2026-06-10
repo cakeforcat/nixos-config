@@ -83,6 +83,9 @@
           # }
         ];
     })
+
+    pragtical
+
     #bitwarden-desktop
     proton-pass
     proton-authenticator
