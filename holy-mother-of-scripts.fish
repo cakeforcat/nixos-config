@@ -68,15 +68,11 @@ function update_npins
     npins update
 end
 
-function edit_config
-    if set -q _flag_edit[1]
-        if not test -f $_flag_edit
-            exit_with_notification "File $_flag_edit does not exist."
-        end
-        $EDITOR $_flag_edit
-    else
-        $EDITOR configuration.nix
+function edit_config -a file
+    if not test -f $file
+        exit_with_notification "File $_flag_edit does not exist."
     end
+    $EDITOR $file
 end
 
 function autoformat
@@ -210,7 +206,11 @@ end
 
 # handle edit flag
 if set -q _flag_edit
-    edit_config
+    if set -q _flag_edit[1]
+        edit_config $_flag_edit[1]
+    else
+        edit_config configuration.nix
+    end
 end
 
 # core rebuild logic
