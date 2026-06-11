@@ -19,6 +19,7 @@
     git-credential-oauth
     wget
     bat
+    ouch
     ds4upin.ds4u
     # turtle # broken rn
     gitui
