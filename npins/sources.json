@@ -22,9 +22,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "1bb49f5aea63e95a3cf9c4b91f9f1331fef7a52b",
-      "url": "https://github.com/thiagokokada/nix-alien/archive/1bb49f5aea63e95a3cf9c4b91f9f1331fef7a52b.tar.gz",
-      "hash": "sha256-HiVhuhD7Fvfje3iw4slmtcCckz/LbjLITa4g/iTEbw0="
+      "revision": "e218108d0fd1ff3e373f126872eddaba62e0afce",
+      "url": "https://github.com/thiagokokada/nix-alien/archive/e218108d0fd1ff3e373f126872eddaba62e0afce.tar.gz",
+      "hash": "sha256-o2iVZt04K97ypUszGRRH31kSanLv/+ujgqH3UI1qXUQ="
     },
     "nixpkgs": {
       "type": "Channel",
