@@ -39,6 +39,8 @@
     collision
     #freecad
     celluloid
+    cine
+    tsukimi
     spotify
     pbpctrl
     gqrx
