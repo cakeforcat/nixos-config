@@ -21,7 +21,6 @@
     bat
     ouch
     ds4upin.ds4u
-    # turtle # broken rn
     gitui
     devenv
     hyfetch
@@ -33,9 +32,7 @@
     fd
     ripgrep
     fastfetch
-    #fish-lsp
     wlink
-    # gnome-firmware
     collision
     #freecad
     celluloid
@@ -45,8 +42,7 @@
     pbpctrl
     gqrx
     tor-browser
-    winbox4
-    #orca-slicer
+    # winbox4
     arduino-ide
     #sdrangel
     #googleearth-pro
@@ -88,23 +84,19 @@
     })
 
     pragtical
-
-    #bitwarden-desktop
     proton-pass
     proton-authenticator
     wl-clipboard
-    nvtopPackages.full
+    # nvtopPackages.full
     warp
     discord
     vesktop
     signal-desktop
     fractal
     foliate
-
-    jellyfin
-    jellyfin-web
-    jellyfin-ffmpeg
-
+    # jellyfin
+    # jellyfin-web
+    # jellyfin-ffmpeg
     qbittorrent
     smile
     starship
@@ -152,8 +144,6 @@
     gnomeExtensions.tailscale-status
     gnomeExtensions.custom-command-toggle
     gnomeExtensions.window-calls-extended
-    #cynthion
-    packetry
 
     openscad-unstable
     ungoogled-chromium

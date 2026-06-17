@@ -21,6 +21,7 @@
         jellout = "sudo systemctl stop jellyfin";
         jellwhat = "sudo systemctl status jellyfin";
         liberator = "ssh strathloop@130.159.177.228";
+        serwer = "ssh serwereczek.cakeforcat.dev";
       };
     };
     starship = {

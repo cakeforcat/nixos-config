@@ -41,10 +41,10 @@
     # flatpak for the odd ones out
     flatpak.enable = true;
     # jellyfin
-    jellyfin = {
-      enable = true;
-      openFirewall = true;
-    };
+    # jellyfin = {
+    #   enable = true;
+    #   openFirewall = true;
+    # };
     # fwupd
     # fwupd.enable = true;
     # tailscale
@@ -55,5 +55,5 @@
     # geoclue2.geoProviderUrl = "https://api.beacondb.net/v1/geolocate";
   };
   # dont start jellyfin on boot
-  systemd.services.jellyfin.wantedBy = pkgs.lib.mkForce [ ];
+  # systemd.services.jellyfin.wantedBy = pkgs.lib.mkForce [ ];
 }

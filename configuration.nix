@@ -27,14 +27,12 @@
     "root"
     "julia"
   ];
-  # system.rebuild.enableNg = true; enabled by default in nixos 25.11
-  # system.nixos-init.enable = true;
   nix.settings.cores = 8;
 
   nix.settings.log-format = "multiline-with-logs";
 
   # fix for broken build on stable
-  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.beta;
+  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.latest;
 
   # lix
   # nixpkgs.overlays = [
@@ -75,18 +73,6 @@
     AllowHybridSleep = "no";
     AllowSuspendThenHibernate = "no";
   };
-
-  # systemd.slices.anti-hungry.sliceConfig = {
-  #   CPUAccounting = true;
-  #   MemoryAccounting = true;
-  #   CPUQuota = "50%";
-  #   MemoryHigh = "7G";
-  #   MemoryMax = "8G";
-  #   MemorySwapMax = "10G";
-  #   MemoryZSwapMax = "10G";
-  # };
-  # systemd.services.nix-daemon.serviceConfig.Slice = "anti-hungry.slice";
-  # systemd.services.nixos-upgrade.serviceConfig.Slice = "anti-hungry.slice";
 
   # RTL-SDR
   hardware.rtl-sdr.enable = true;
