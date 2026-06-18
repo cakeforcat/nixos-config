@@ -49,6 +49,7 @@
     proton-vpn
     wireguard-tools
 
+    zed-editor
     (vscode-with-extensions.override {
       vscode = vscodium;
       vscodeExtensions =
