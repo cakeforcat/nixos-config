@@ -40,9 +40,9 @@ argparse --exclusive "boot,push" $options -- $argv
 set -g absolute_nixos_config_path "/home/$USER/nixos-config"
 
 if set -q _flag_boot
-    set -g rebuild_type "boot"
+    set -g rebuild_type boot
 else
-    set -g rebuild_type "switch"
+    set -g rebuild_type switch
 end
 
 function exit_with_notification -a message
@@ -117,7 +117,7 @@ function check_rebuild
         return 1
         # exit_with_notification "Check rebuild.log for details."
     end
-    if rg --quiet "SIGKILL" rebuild.log
+    if rg --quiet SIGKILL rebuild.log
         echo "Rebuild was killed (probably out of memory), exiting."
         return 1
         # exit_with_notification "Check rebuild.log for details."
@@ -183,13 +183,9 @@ end
 #     echo "interrupted!"
 # end
 
-
-
 # -------------------------------------------------------------------------
 # ---------------------------Entry Point-----------------------------------
 #--------------------------------------------------------------------------
-
-
 
 # handle help flag
 if set -q _flag_help
@@ -251,5 +247,5 @@ end
 # finish successfully
 popd
 echo "NIXIT completed successfully."
-notify-send --transient --icon=software-update-available --app-name=NIXIT "NIXIT Successful" 
+notify-send --transient --icon=software-update-available --app-name=NIXIT "NIXIT Successful"
 return 0
