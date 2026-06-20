@@ -48,6 +48,7 @@
     #googleearth-pro
     proton-vpn
     wireguard-tools
+    openrocket
 
     zed-editor
     (vscode-with-extensions.override {
