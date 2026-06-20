@@ -32,7 +32,7 @@
   nix.settings.log-format = "multiline-with-logs";
 
   # fix for broken build on stable
-  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.latest;
+  # hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.latest;
 
   # lix
   # nixpkgs.overlays = [
@@ -85,7 +85,7 @@
       efi.canTouchEfiVariables = true;
     };
     # Kernel
-    kernelPackages = pkgs.linuxPackages_latest;
+    # kernelPackages = pkgs.linuxPackages_latest;
     # Kernel modules
     kernelModules = [
       "ntsync"
