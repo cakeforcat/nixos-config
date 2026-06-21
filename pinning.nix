@@ -23,6 +23,7 @@ in
 
   nixpkgs.config.packageOverrides = pkgs: {
     ds4upin = import sources.ds4u-nixpkgs { config = config.nixpkgs.config; };
+    openrocketpin = import sources.new-openrocket-nixpkgs { config = config.nixpkgs.config; };
   };
 
   # lix
