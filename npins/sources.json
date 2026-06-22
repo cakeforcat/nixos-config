@@ -13,6 +13,19 @@
       "url": "https://github.com/cakeforcat/nixpkgs/archive/93b101e5c681a37fdd9c10f7b04fc96a754fa009.tar.gz",
       "hash": "sha256-EW4n9vakcSqi6fDynK9przcwXRg3tGXuaye5cuvAufk="
     },
+    "new-openrocket-nixpkgs": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "tree-sapii",
+        "repo": "nixpkgs"
+      },
+      "branch": "openrocket_update",
+      "submodules": false,
+      "revision": "8c1828472f5f0bb5e79a9119d01047b2976bd058",
+      "url": "https://github.com/tree-sapii/nixpkgs/archive/8c1828472f5f0bb5e79a9119d01047b2976bd058.tar.gz",
+      "hash": "sha256-VVh0d4dcm+DtVfT5Er4VlrvMGz+mDmSal5HC/23lEyI="
+    },
     "nix-alien": {
       "type": "Git",
       "repository": {
