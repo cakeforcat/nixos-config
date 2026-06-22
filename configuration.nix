@@ -12,8 +12,8 @@
     ./packages.nix
     ./builtin-programs.nix
     ./builtin-services.nix
+    ./services.nix
     ./shell-config.nix
-    ./vm.nix
     ./nix-alien.nix
     ./plymouth.nix
   ];
@@ -23,30 +23,17 @@
   };
 
   # extra nix settings
-  nix.settings.trusted-users = [
-    "root"
-    "julia"
-  ];
-  nix.settings.cores = 8;
-
-  nix.settings.log-format = "multiline-with-logs";
-
-  # fix for broken build on stable
-  # hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.latest;
-
-  # lix
-  # nixpkgs.overlays = [
-  #   (final: prev: {
-  #     inherit
-  #       (prev.lixPackageSets.git)
-  #       nixpkgs-review
-  #       nix-eval-jobs
-  #       nix-fast-build
-  #       colmena
-  #       ;
-  #   })
-  # ];
-  nix.package = pkgs.lixPackageSets.latest.lix;
+  nix = {
+    settings = {
+      trusted-users = [
+        "root"
+        "julia"
+      ];
+      cores = 8;
+      log-format = "multiline-with-logs";
+    };
+    package = pkgs.lixPackageSets.latest.lix;
+  };
 
   # Show package version changes on switch
   system.activationScripts.diff = {
