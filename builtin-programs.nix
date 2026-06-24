@@ -93,6 +93,11 @@
           ];
       };
     };
+    # nix helper
+    nh = {
+      enable = true;
+      # clean.enable = true;
+    };
     # nix-ld
     nix-ld.enable = true;
     # wireshark
