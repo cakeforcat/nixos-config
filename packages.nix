@@ -48,6 +48,7 @@
     #googleearth-pro
     proton-vpn
     wireguard-tools
+    geteduroam
     openrocketpin.openrocket
 
     zed-editor
