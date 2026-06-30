@@ -22,7 +22,7 @@ in
   # programs.command-not-found.dbPath = "/etc/nixos/nixpkgs/programs.sqlite";
 
   nixpkgs.config.packageOverrides = pkgs: {
-    ds4upin = import sources.ds4u-nixpkgs { config = config.nixpkgs.config; };
+    # ds4upin = import sources.ds4u-nixpkgs { config = config.nixpkgs.config; };
     openrocketpin = import sources.new-openrocket-nixpkgs { config = config.nixpkgs.config; };
   };
 
