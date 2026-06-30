@@ -89,7 +89,7 @@ function fancy_rebuild -a type metatask log
     echo $metatask
 
     # grab the latest nixpkgs path
-    set -l nixpkgs_path (nix-instantiate --json --eval npins/default.nix -A nixpkgs.outPath | jq -r .)
+    set -l nixpkgs_path (npins get-path nixpkgs)
 
     # move to alt terminal buffer
     tput smcup
