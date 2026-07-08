@@ -40,6 +40,7 @@ stdenvNoCC.mkDerivation (finalAttrs: {
 
   nativeBuildInputs = [
     autoPatchelfHook
+    copyDesktopItems
     makeBinaryWrapper
   ];
 
@@ -62,6 +63,8 @@ stdenvNoCC.mkDerivation (finalAttrs: {
     dotnet-runtime_10
   ];
 
+  appendRunpaths = [ (lib.makeLibraryPath finalAttrs.buildInputs) ];
+
   installPhase = ''
     runHook preInstall
 
@@ -74,7 +77,6 @@ stdenvNoCC.mkDerivation (finalAttrs: {
       --unset WAYLAND_DISPLAY \
       --unset WAYLAND_SOCKET \
       --set XDG_SESSION_TYPE "x11" \
-      --prefix LD_LIBRARY_PATH : "${lib.makeLibraryPath finalAttrs.buildInputs}" \
       --prefix VK_LAYER_PATH : "${vulkan-validation-layers}/share/vulkan/explicit_layer.d" \
       --prefix PATH : "${dotnet-runtime_10}" \
       --set DOTNET_ROOT "${dotnet-runtime_10}/share/dotnet" \
