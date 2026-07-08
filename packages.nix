@@ -162,6 +162,7 @@
     busybox
     mosquitto
     rpi-imager
+    (callPackage ./ksa.nix { })
   ];
 
   environment.gnome.excludePackages = with pkgs; [
