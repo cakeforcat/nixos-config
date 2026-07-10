@@ -3,10 +3,10 @@
   boot = {
     plymouth = {
       enable = true;
-      theme = "nixos-bgrt";
+      theme = "blahaj";
       themePackages = with pkgs; [
-        nixos-bgrt-plymouth
-        #plymouth-blahaj-theme
+        #nixos-bgrt-plymouth
+        plymouth-blahaj-theme
       ];
     };
 
