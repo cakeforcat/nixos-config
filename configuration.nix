@@ -6,6 +6,7 @@
 }:
 {
   imports = [
+    ./overlays.nix
     ./nixos-hardware/lenovo/legion/15arh05h/default.nix
     ./hardware-configuration.nix
     ./pinning.nix
