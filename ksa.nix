@@ -93,9 +93,9 @@ stdenvNoCC.mkDerivation (finalAttrs: {
       --chdir $out/share/ksa
 
     # Install icon files
-    mkdir -pv $out/share/icon/
+    mkdir -pv $out/share/icons/hicolor/256x256/apps/
     icotool -x $icoSrc
-    cp *_256x256x32.png $out/share/icon/ksa.png
+    cp *_256x256x32.png $out/share/icons/hicolor/256x256/apps/ksa.png
 
     runHook postInstall
   '';
