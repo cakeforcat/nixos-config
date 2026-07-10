@@ -7,6 +7,7 @@
   autoPatchelfHook,
   copyDesktopItems,
   makeDesktopItem,
+  icoutils,
   gcc,
   libgcc,
   icu,
@@ -29,10 +30,22 @@
 stdenvNoCC.mkDerivation (finalAttrs: {
   version = "2026.7.4.4860"; # Bump to update
   pname = "ksa";
+
   src = requireFile {
     name = "setup_ksa_v${finalAttrs.version}.tar.gz";
     url = "https://ahwoo.com/app/100000/kitten-space-agency";
     sha256 = "1vxzcwvlms4d6hhf2jb7cma1wns5vsa968zq492xi2kzkc75qpdj";
+  };
+
+  outputs = [
+    "out"
+    "icons"
+  ];
+
+  icoSrc = requireFile {
+    name = "ksa_ico.ico";
+    url = "https://forums.ahwoo.com/threads/ksa-icon-and-flat-logo-cc-4-0.496/";
+    sha256 = "1mjzlin2mhd05n7bbc80i7miijn9b0n06d7c1w8k9247xzs5bc3b";
   };
 
   dontBuild = true;
@@ -42,6 +55,7 @@ stdenvNoCC.mkDerivation (finalAttrs: {
     autoPatchelfHook
     makeBinaryWrapper
     copyDesktopItems
+    icoutils
   ];
 
   buildInputs = [
@@ -86,10 +100,19 @@ stdenvNoCC.mkDerivation (finalAttrs: {
     runHook postInstall
   '';
 
+  postInstall = ''
+    mkdir $icons
+    icotool -x -o $icons $icoSrc
+    pushd $icons
+    mv *_256x256x32.png ksa_256x256x32.png
+    popd
+  '';
+
   desktopItems = [
     (makeDesktopItem {
       name = "KSA";
       desktopName = "KSA";
+      icon = "ksa";
       comment = finalAttrs.meta.description;
       exec = "KSA";
       terminal = false;
