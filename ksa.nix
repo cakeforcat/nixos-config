@@ -37,11 +37,6 @@ stdenvNoCC.mkDerivation (finalAttrs: {
     sha256 = "1vxzcwvlms4d6hhf2jb7cma1wns5vsa968zq492xi2kzkc75qpdj";
   };
 
-  outputs = [
-    "out"
-    "icons"
-  ];
-
   icoSrc = requireFile {
     name = "ksa_ico.ico";
     url = "https://forums.ahwoo.com/threads/ksa-icon-and-flat-logo-cc-4-0.496/";
@@ -97,15 +92,12 @@ stdenvNoCC.mkDerivation (finalAttrs: {
       --set DOTNET_ROOT_X64 "${dotnet-runtime_10}/share/dotnet" \
       --chdir $out/share/ksa
 
-    runHook postInstall
-  '';
+    # Install icon files
+    mkdir -pv $out/share/icon/
+    icotool -x $icoSrc
+    cp *_256x256x32.png $out/share/icon/ksa.png
 
-  postInstall = ''
-    mkdir $icons
-    icotool -x -o $icons $icoSrc
-    pushd $icons
-    mv *_256x256x32.png ksa_256x256x32.png
-    popd
+    runHook postInstall
   '';
 
   desktopItems = [
