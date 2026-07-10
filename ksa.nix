@@ -40,8 +40,8 @@ stdenvNoCC.mkDerivation (finalAttrs: {
 
   nativeBuildInputs = [
     autoPatchelfHook
-    copyDesktopItems
     makeBinaryWrapper
+    copyDesktopItems
   ];
 
   buildInputs = [
@@ -88,10 +88,10 @@ stdenvNoCC.mkDerivation (finalAttrs: {
 
   desktopItems = [
     (makeDesktopItem {
-      name = "ksa";
+      name = "KSA";
       desktopName = "KSA";
       comment = finalAttrs.meta.description;
-      exec = "ksa";
+      exec = "KSA";
       terminal = false;
       type = "Application";
       categories = [
