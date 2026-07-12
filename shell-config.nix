@@ -13,13 +13,10 @@
         starship init fish | source
       '';
       shellAliases = {
-        econf = "nvim ~/nixos-config/configuration.nix";
-        ehwconf = "nvim ~/nixos-config/hardware-configuration.nix";
         nixit = "source ~/nixos-config/holy-mother-of-scripts.fish";
         nix-fish = "nix-shell --command fish";
-        jellit = "sudo systemctl start jellyfin";
-        jellout = "sudo systemctl stop jellyfin";
-        jellwhat = "sudo systemctl status jellyfin";
+        get = "nix-fish -p";
+        fraternizer = "ssh 192.168.1.236";
         liberator = "ssh strathloop@130.159.177.228";
         serwer = "ssh serwereczek.cakeforcat.dev";
       };
