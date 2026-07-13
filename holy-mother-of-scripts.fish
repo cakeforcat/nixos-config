@@ -216,8 +216,10 @@ if not git diff --quiet '*.nix'; or not git diff --quiet 'npins/sources.json'; o
     git diff -U0
     fancy_rebuild "$rebuild_type" "Rebuilding NixOS configuration..." rebuild.log
     if not check_rebuild
-        # revert npins
-        git restore 'npins/sources.json'
+        # revert npins if updated through flag
+        if set -q _flag_update
+            git restore 'npins/sources.json'
+        end
         # fail if bad rebuild
         exit_with_notification "Check rebuild.log for details."
     else
