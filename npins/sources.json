@@ -43,8 +43,21 @@
       "type": "Channel",
       "name": "nixos-unstable",
       "artifact": "nixexprs.tar.xz",
-      "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1031299.0bb7ec54c848/nixexprs.tar.xz",
-      "hash": "sha256-nFgG4gPQueCgP8LidXsdI2lYPrSwTcmDl6afcVn7F/U="
+      "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1034379.18b9261cb329/nixexprs.tar.xz",
+      "hash": "sha256-G9I5EeMhwLckqD5QLgowA6hNBaOjG9CeYIzfSz4gZ6k="
+    },
+    "torlink-nixpkgs": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "Ghastrum",
+        "repo": "nixpkgs"
+      },
+      "branch": "add-torlink",
+      "submodules": false,
+      "revision": "9e7301bd7cc715fe2e00e82df150f7c610e505c8",
+      "url": "https://github.com/Ghastrum/nixpkgs/archive/9e7301bd7cc715fe2e00e82df150f7c610e505c8.tar.gz",
+      "hash": "sha256-ttO2ZbRUw1i9iEIejXAmrmyzPss+wUGwFvJDJaJyV9c="
     }
   },
   "version": 8

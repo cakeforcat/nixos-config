@@ -47,9 +47,11 @@
     #sdrangel
     #googleearth-pro
     proton-vpn
+    proton-vpn-cli
     wireguard-tools
     geteduroam
     openrocketpin.openrocket
+    torlinkpin.torlink
 
     zed-editor
     (vscode-with-extensions.override {
