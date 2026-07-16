@@ -16,8 +16,8 @@
         nixit = "source ~/nixos-config/holy-mother-of-scripts.fish";
         nix-fish = "nix-shell --command fish";
         get = "nix-fish -p";
-        fraternizer = "ssh 192.168.1.236";
-        liberator = "ssh strathloop@130.159.177.228";
+        fraternizer = "ssh fraternizer@fraternizer.cakeforcat.dev";
+        liberator = "ssh strathloop@liberator.cakeforcat.dev";
         serwer = "ssh serwereczek.cakeforcat.dev";
       };
     };
