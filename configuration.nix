@@ -7,7 +7,7 @@
 {
   imports = [
     ./overlays.nix
-    ./nixos-hardware/lenovo/legion/15arh05h/default.nix
+    "${(import ./npins).custom-nixos-hardware}/lenovo/legion/15arh05h/default.nix"
     ./hardware-configuration.nix
     ./pinning.nix
     ./packages.nix
@@ -18,6 +18,39 @@
     ./nix-alien.nix
     ./plymouth.nix
   ];
+
+  services.kea = {
+    dhcp6 = {
+      enable = true;
+      settings = {
+        interfaces-config = {
+          interfaces = [
+            "eno1"
+          ];
+        };
+        lease-database = {
+          name = "/var/lib/kea/dhcp6.leases";
+          persist = true;
+          type = "memfile";
+        };
+        preferred-lifetime = 3000;
+        rebind-timer = 2000;
+        renew-timer = 1000;
+        subnet6 = [
+          {
+            id = 1;
+            pools = [
+              {
+                pool = "2001:db8:1::1-2001:db8:1::ffff";
+              }
+            ];
+            subnet = "2001:db8:1::/64";
+          }
+        ];
+        valid-lifetime = 4000;
+      };
+    };
+  };
 
   virtualisation.docker = {
     enable = true;

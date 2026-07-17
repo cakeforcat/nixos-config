@@ -1,5 +1,18 @@
 {
   "pins": {
+    "custom-nixos-hardware": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "cakeforcat",
+        "repo": "nixos-hardware"
+      },
+      "branch": "lenovo-legion-15arh05h-improve",
+      "submodules": false,
+      "revision": "d5c8730a5d8027af4ac63bbc357c0e5f981c45d2",
+      "url": "https://github.com/cakeforcat/nixos-hardware/archive/d5c8730a5d8027af4ac63bbc357c0e5f981c45d2.tar.gz",
+      "hash": "sha256-UIDhp67/zDkKrX5HcdfMFLGBNK1lm8R1lUdPJbHiWVs="
+    },
     "ds4u-nixpkgs": {
       "type": "Git",
       "repository": {
