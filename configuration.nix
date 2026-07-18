@@ -19,40 +19,7 @@
     ./plymouth.nix
   ];
 
-  # services.kea = {
-  #   dhcp6 = {
-  #     enable = true;
-  #     settings = {
-  #       interfaces-config = {
-  #         interfaces = [
-  #           "eno1"
-  #         ];
-  #         service-sockets-max-retries = 200000;
-  #         service-sockets-retry-wait-time = 5000;
-  #       };
-  #       lease-database = {
-  #         name = "/var/lib/kea/dhcp6.leases";
-  #         persist = true;
-  #         type = "memfile";
-  #       };
-  #       preferred-lifetime = 3000;
-  #       rebind-timer = 2000;
-  #       renew-timer = 1000;
-  #       subnet6 = [
-  #         {
-  #           id = 1;
-  #           pools = [
-  #             {
-  #               pool = "2001:db8:1::1-2001:db8:1::ffff";
-  #             }
-  #           ];
-  #           subnet = "2001:db8:1::/64";
-  #         }
-  #       ];
-  #       valid-lifetime = 4000;
-  #     };
-  #   };
-  # };
+  networking.supplicant.wlp4s0.extraCmdArgs = "-dd";
 
   virtualisation.docker = {
     enable = true;
