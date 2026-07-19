@@ -19,8 +19,6 @@
     ./plymouth.nix
   ];
 
-  networking.supplicant.wlp4s0.extraCmdArgs = "-dd";
-
   virtualisation.docker = {
     enable = true;
   };
