@@ -20,13 +20,13 @@
     #   pnpm_10_29_2 = final.pnpm_10;
     # })
 
-    (final: prev: {
-      vulkan-validation-layers = prev.vulkan-validation-layers.overrideAttrs (old: {
-        cmakeFlags = [
-          "-DUPDATE_DEPS=OFF"
-        ]
-        ++ old.cmakeFlags;
-      });
-    })
+    # (final: prev: {
+    #   vulkan-validation-layers = prev.vulkan-validation-layers.overrideAttrs (old: {
+    #     cmakeFlags = [
+    #       "-DUPDATE_DEPS=OFF"
+    #     ]
+    #     ++ old.cmakeFlags;
+    #   });
+    # })
   ];
 }
