@@ -22,9 +22,9 @@
       },
       "branch": "openrocket_update",
       "submodules": false,
-      "revision": "404c3739f36f7922723895df3e67452595db08e5",
-      "url": "https://github.com/tree-sapii/nixpkgs/archive/404c3739f36f7922723895df3e67452595db08e5.tar.gz",
-      "hash": "sha256-geU9i77TsQWKeaL+Y3OmmEoyKS3vj9mwR8Mks/KDVwo="
+      "revision": "d8db17cbc7179221e12e366b23ea3754ac161ec3",
+      "url": "https://github.com/tree-sapii/nixpkgs/archive/d8db17cbc7179221e12e366b23ea3754ac161ec3.tar.gz",
+      "hash": "sha256-+mESUM5Y47Y5qwuaEqKy5QjaET/FeX6o8/2ddBrlrw0="
     },
     "nix-alien": {
       "type": "Git",
@@ -43,8 +43,8 @@
       "type": "Channel",
       "name": "nixos-unstable",
       "artifact": "nixexprs.tar.xz",
-      "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1042126.624af665418d/nixexprs.tar.xz",
-      "hash": "sha256-JmPsbx37jA7Qga36iij0jsbwV4PVRACnqoVroAt/cAc="
+      "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1045728.148bab9c1c3c/nixexprs.tar.xz",
+      "hash": "sha256-xwSqxTsama0YTtS78+4YyCm6jJg09v78QWfP1cAyoVA="
     },
     "torlink-nixpkgs": {
       "type": "Git",
