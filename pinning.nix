@@ -23,7 +23,7 @@ in
 
   nixpkgs.config.packageOverrides = pkgs: {
     torlinkpin = import sources.torlink-nixpkgs { config = config.nixpkgs.config; };
-    openrocketpin = import sources.new-openrocket-nixpkgs { config = config.nixpkgs.config; };
+    # openrocketpin = import sources.new-openrocket-nixpkgs { config = config.nixpkgs.config; };
   };
 
   # lix

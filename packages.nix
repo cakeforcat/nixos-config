@@ -50,7 +50,7 @@
     proton-vpn-cli
     wireguard-tools
     geteduroam
-    openrocketpin.openrocket
+    # openrocketpin.openrocket
     torlinkpin.torlink
 
     zed-editor
