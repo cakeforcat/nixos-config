@@ -24,17 +24,18 @@
   vulkan-loader,
   vulkan-validation-layers,
   libpulseaudio,
+  lttng-ust_2_12,
   dotnet-runtime_10,
 }:
 
 stdenvNoCC.mkDerivation (finalAttrs: {
-  version = "2026.8.5.5168"; # Bump to update
+  version = "2026.8.19.5261"; # Bump to update
   pname = "ksa";
 
-  src = requireFile {
-    name = "setup_ksa_v${finalAttrs.version}.tar.gz";
+  srcs = requireFile {
+    name = "ksa_linux_v${finalAttrs.version}.tar.gz";
     url = "https://ahwoo.com/app/100000/kitten-space-agency";
-    sha256 = "17f1hw13wqpszx3y3cp0qy4fii60jg9z3vn93h0bgbvsfs0h7305";
+    sha256 = "0yyclinnjn7zv2zynwyyh5iy1rm5vfafq4630finfc435cb0s8mn";
   };
 
   icoSrc = requireFile {
@@ -42,6 +43,8 @@ stdenvNoCC.mkDerivation (finalAttrs: {
     url = "https://forums.ahwoo.com/threads/ksa-icon-and-flat-logo-cc-4-0.496/";
     sha256 = "1mjzlin2mhd05n7bbc80i7miijn9b0n06d7c1w8k9247xzs5bc3b";
   };
+
+  sourceRoot = ".";
 
   dontBuild = true;
   dontConfigure = true;
@@ -69,6 +72,7 @@ stdenvNoCC.mkDerivation (finalAttrs: {
     vulkan-loader
     vulkan-validation-layers
     libpulseaudio
+    lttng-ust_2_12
     dotnet-runtime_10
   ];
 
