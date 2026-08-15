@@ -97,6 +97,7 @@
     discord
     vesktop
     signal-desktop
+    telegram-desktop
     fractal
     foliate
     # jellyfin
