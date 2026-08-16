@@ -1,3 +1,6 @@
+[![Tangled](https://img.shields.io/badge/github-repo-pink?logo=tangled)](https://tangled.org/cakeforcat.dev/nixos-config)
+[![GitHub](https://img.shields.io/badge/GitHub-Mirror-black)](https://github.com/cakeforcat/nixos-config/)
+
 # Hello!
 This is my current collection of NixOS configuration files and a support script for building.
 
