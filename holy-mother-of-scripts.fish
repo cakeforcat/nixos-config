@@ -56,7 +56,7 @@ end
 
 function push_to_remote
     echo "Pushing changes to remote repository..."
-    if not git push -u origin main
+    if not git push -u all main
         exit_with_notification "Failed to push changes to remote repository."
     else
         echo "Changes pushed successfully."
