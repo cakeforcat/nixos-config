@@ -120,7 +120,7 @@
     nix-du
     graphviz
 
-    libreoffice-fresh
+    libreoffice-stable
     hunspell
     hunspellDicts.en_GB-ise
     hunspellDicts.pl_PL
