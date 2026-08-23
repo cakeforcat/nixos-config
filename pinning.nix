@@ -12,21 +12,14 @@ in
     channel.enable = false;
     nixPath = [
       "nixpkgs=/etc/nixos/nixpkgs"
-      "nixos-config=/home/julia/nixos-config/configuration.nix"
     ];
   };
   environment.etc = {
     "nixos/nixpkgs".source = builtins.storePath pkgs.path;
   };
-  # command-not-found fix (no longer needed yay)
-  # programs.command-not-found.dbPath = "/etc/nixos/nixpkgs/programs.sqlite";
 
   nixpkgs.config.packageOverrides = pkgs: {
     torlinkpin = import sources.torlink-nixpkgs { config = config.nixpkgs.config; };
-    # openrocketpin = import sources.new-openrocket-nixpkgs { config = config.nixpkgs.config; };
+    openrocketpin = import sources.new-openrocket-nixpkgs { config = config.nixpkgs.config; };
   };
-
-  # lix
-  # imports = [(import "${sources.lix-module}/module.nix" {lix = sources.lix-src;})];
-  # moved to configuration.nix, stabilised
 }
