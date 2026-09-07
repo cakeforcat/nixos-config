@@ -43,8 +43,8 @@
       "type": "Channel",
       "name": "nixos-unstable",
       "artifact": "nixexprs.tar.xz",
-      "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1060451.56c02bc00adc/nixexprs.tar.xz",
-      "hash": "sha256-FoOSoBG7tEvOlGRTpWnVdY506Ner4y7r7UYO3OGgmE8="
+      "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1068089.c043004d1c69/nixexprs.tar.xz",
+      "hash": "sha256-PRK1fSEiAcO29DkUoOlsVLGYRK3h1YKVr+qQJB0VcYQ="
     },
     "torlink-nixpkgs": {
       "type": "Git",
@@ -55,9 +55,9 @@
       },
       "branch": "init-torlink",
       "submodules": false,
-      "revision": "943c437c69181383d12feb0e495bd13ab39209f1",
-      "url": "https://github.com/cakeforcat/nixpkgs/archive/943c437c69181383d12feb0e495bd13ab39209f1.tar.gz",
-      "hash": "sha256-4Htsdl3SUVTbyK8QL7oBHH2b3T7yBFArisXDQPvgalM="
+      "revision": "ce782f16cd11887d9fa8fac011e14abd2fe55ed5",
+      "url": "https://github.com/cakeforcat/nixpkgs/archive/ce782f16cd11887d9fa8fac011e14abd2fe55ed5.tar.gz",
+      "hash": "sha256-gAx7zqVsE3ZPWT8X1So9iRSXfv1SIG9zwUWxHtTiYAY="
     }
   },
   "version": 8
