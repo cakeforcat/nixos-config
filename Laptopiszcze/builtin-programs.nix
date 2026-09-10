@@ -1,0 +1,109 @@
+{
+  config,
+  pkgs,
+  ...
+}:
+{
+  # builtin program derivations
+  programs = {
+    # firefox
+    firefox.enable = true;
+    # steam
+    steam = {
+      enable = true;
+      extraCompatPackages = with pkgs; [
+        proton-ge-bin
+        steamtinkerlaunch
+      ];
+    };
+    # gamemode
+    gamemode = {
+      enable = true;
+      settings = {
+        general = {
+          renice = 10;
+        };
+        # Warning: GPU optimisations have the potential to damage hardware
+        # gpu = {
+        #   apply_gpu_optimisations = "accept-responsibility";
+        #   gpu_device = 0;
+        #   amd_performance_level = "high";
+        # };
+        custom = {
+          start = "${pkgs.libnotify}/bin/notify-send 'GameMode started'";
+          end = "${pkgs.libnotify}/bin/notify-send 'GameMode ended'";
+        };
+      };
+    };
+    # GSConnect
+    kdeconnect = {
+      enable = true;
+      package = pkgs.gnomeExtensions.gsconnect;
+    };
+    # git and github
+    git = {
+      enable = true;
+      package = pkgs.gitFull;
+      config = {
+        credential.helper = [
+          "cache --timeout 21600" # 6 hours
+          "oauth"
+        ];
+        init.defaultBranch = "main";
+        pull.rebase = true;
+        user = {
+          email = "julia@cakeforcat.dev";
+          name = "cakeforcat";
+          signingkey = "~/.ssh/id_ed25519.pub";
+        };
+        commit.gpgsign = true;
+        gpg.format = "ssh";
+        gpg.ssh.allowedSignersFile = "~/.config/git/allowed_signers";
+      };
+    };
+    # gpg
+    gnupg.agent = {
+      enable = true;
+      settings = {
+        default-cache-ttl = 28800; # 8 hours
+        max-cache-ttl = 28800; # 8 hours
+        pinentry-timeout = 600; # 10 minutes
+      };
+    };
+    # neovim
+    neovim = {
+      enable = true;
+      defaultEditor = true;
+      # configure = {
+      #  packages.myVimPackage = with pkgs.vimPlugins; {
+      #    start = [gruvbox-nvim];
+      #  };
+      # };
+    };
+    # direnv
+    direnv.enable = true;
+    # appimage
+    appimage = {
+      enable = true;
+      binfmt = true;
+      package = pkgs.appimage-run.override {
+        extraPkgs =
+          pkgs: with pkgs; [
+            webkitgtk_4_1
+          ];
+      };
+    };
+    # nix helper
+    nh = {
+      enable = true;
+      # clean.enable = true;
+    };
+    # nix-ld
+    nix-ld.enable = true;
+    # wireshark
+    # wireshark = {
+    #   enable = true;
+    #   package = pkgs.wireshark;
+    # };
+  };
+}
