@@ -8,11 +8,10 @@ in
   };
 
   defaults =
-    { lib, name, ... }:
+      { lib, name, ... }:
     {
       imports = [
-        # ./nixos/nixpkgs.nix
-        # ./nixos/common.nix
+        ./common-modules
       ];
       config = {
         networking.hostName = name;
