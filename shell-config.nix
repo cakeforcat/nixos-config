@@ -15,7 +15,7 @@
       shellAliases = {
         nixit = "source ~/nixos-config/holy-mother-of-scripts.fish";
         nix-fish = "nix-shell --command fish";
-        get = "nix-fish -p";
+        get = "NIXPKGS_ALLOW_UNFREE=1 nix-fish -p";
         fraternizer = "ssh 192.168.1.236";
         liberator = "ssh strathloop@130.159.177.228";
         serwer = "ssh serwereczek.cakeforcat.dev";
