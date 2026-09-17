@@ -166,13 +166,13 @@
     mosquitto
     rpi-imager
     (callPackage ./ksa.nix { })
-    factorio-space-age
+    factorio-space-age-experimental
   ];
 
   system.extraDependencies = [
     (pkgs.callPackage ./ksa.nix { }).srcs
     (pkgs.callPackage ./ksa.nix { }).icoSrc
-    pkgs.factorio-space-age.src
+    pkgs.factorio-space-age-experimental.src
   ];
 
   environment.gnome.excludePackages = with pkgs; [
