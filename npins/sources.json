@@ -13,6 +13,19 @@
       "url": "https://github.com/cakeforcat/nixos-hardware/archive/d5c8730a5d8027af4ac63bbc357c0e5f981c45d2.tar.gz",
       "hash": "sha256-UIDhp67/zDkKrX5HcdfMFLGBNK1lm8R1lUdPJbHiWVs="
     },
+    "jlcone-nixpkgs": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "cakeforcat",
+        "repo": "nixpkgs"
+      },
+      "branch": "init-jlcone",
+      "submodules": false,
+      "revision": "786a109fdf17d7d82e3141eead1ff3ab0015efe5",
+      "url": "https://github.com/cakeforcat/nixpkgs/archive/786a109fdf17d7d82e3141eead1ff3ab0015efe5.tar.gz",
+      "hash": "sha256-ogivuVTwVCuEq2+tyKoWuNyPPLNQrI1K/EyyH7qXgGQ="
+    },
     "new-openrocket-nixpkgs": {
       "type": "Git",
       "repository": {

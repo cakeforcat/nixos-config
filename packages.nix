@@ -166,6 +166,7 @@
     mosquitto
     rpi-imager
     (callPackage ./ksa.nix { })
+    jlconepin.jlcone
     factorio-space-age-experimental
   ];
 
