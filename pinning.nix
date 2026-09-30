@@ -10,7 +10,7 @@ in
   # kill channels
   nix = {
     channel.enable = false;
-    nixPath = [
+    settings.nix-path = [
       "nixpkgs=/etc/nixos/nixpkgs"
       "nixos-config=/home/julia/nixos-config/configuration.nix"
     ];

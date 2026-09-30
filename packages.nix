@@ -40,7 +40,7 @@
     tsukimi
     spotify
     pbpctrl
-    gqrx
+    # gqrx
     tor-browser
     # winbox4
     arduino-ide
@@ -157,11 +157,11 @@
     heroic
     diebahn
     #unstable.mission-center
-    (gnuradio.override {
-      extraPackages = with gnuradioPackages; [
-        lora_sdr
-      ];
-    })
+    # (gnuradio.override {
+    #   extraPackages = with gnuradioPackages; [
+    #     lora_sdr
+    #   ];
+    # })
     busybox
     mosquitto
     rpi-imager

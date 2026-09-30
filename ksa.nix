@@ -29,13 +29,13 @@
 }:
 
 stdenvNoCC.mkDerivation (finalAttrs: {
-  version = "2026.9.10.5438"; # Bump to update
+  version = "2026.9.22.5482"; # Bump to update
   pname = "ksa";
 
   srcs = requireFile {
     name = "ksa_linux_v${finalAttrs.version}.tar.gz";
     url = "https://ahwoo.com/app/100000/kitten-space-agency";
-    sha256 = "0zzz1zqfiyd9jj85jdf1pk8rc1n2cvs175wrlxh55hvsnm0xq1zz";
+    sha256 = "0x7zybsqh61md5xy7snq5gxy46126rnfgnx62hgrs8fc2zca5p7b";
   };
 
   icoSrc = requireFile {

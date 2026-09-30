@@ -22,9 +22,9 @@
       },
       "branch": "init-jlcone",
       "submodules": false,
-      "revision": "786a109fdf17d7d82e3141eead1ff3ab0015efe5",
-      "url": "https://github.com/cakeforcat/nixpkgs/archive/786a109fdf17d7d82e3141eead1ff3ab0015efe5.tar.gz",
-      "hash": "sha256-ogivuVTwVCuEq2+tyKoWuNyPPLNQrI1K/EyyH7qXgGQ="
+      "revision": "e2be80de57dd1a3256a32c00bb0822d18d741587",
+      "url": "https://github.com/cakeforcat/nixpkgs/archive/e2be80de57dd1a3256a32c00bb0822d18d741587.tar.gz",
+      "hash": "sha256-0sE+PD4t1e4u+W1mcWLpBR7ZwcmvwhZ6NmUReIXznMo="
     },
     "new-openrocket-nixpkgs": {
       "type": "Git",
@@ -56,8 +56,8 @@
       "type": "Channel",
       "name": "nixos-unstable",
       "artifact": "nixexprs.tar.xz",
-      "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1076192.20b1ddd1aa5a/nixexprs.tar.xz",
-      "hash": "sha256-BMbikTjbh5H7ac/OjwGoJrlooh4dgNqhs51ABM83M7g="
+      "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1082427.b4fd65b198c5/nixexprs.tar.xz",
+      "hash": "sha256-VyUI5WA3WdOB9kjb04A0pxE6XTWC6cG95ZkoPSv58F0="
     },
     "torlink-nixpkgs": {
       "type": "Git",

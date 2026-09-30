@@ -87,7 +87,7 @@
     networkmanager = {
       enable = true;
       plugins = with pkgs; [
-        networkmanager-vpnc
+        networkmanager-libreswan
         networkmanager-openvpn
       ];
     };
