@@ -1,5 +1,18 @@
 {
   "pins": {
+    "bambu-nixpkgs": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "joaosreis",
+        "repo": "nixpkgs"
+      },
+      "branch": "bambu-studio",
+      "submodules": false,
+      "revision": "8fc98593fff4904c36939264cd8c9e65b1b3a930",
+      "url": "https://github.com/joaosreis/nixpkgs/archive/8fc98593fff4904c36939264cd8c9e65b1b3a930.tar.gz",
+      "hash": "sha256-UjvZCWW35W0lYm9o5nlm2TlDbDLtrVv1qWnSTq1YP/0="
+    },
     "custom-nixos-hardware": {
       "type": "Git",
       "repository": {
@@ -56,8 +69,8 @@
       "type": "Channel",
       "name": "nixos-unstable",
       "artifact": "nixexprs.tar.xz",
-      "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1083223.c59305bab206/nixexprs.tar.xz",
-      "hash": "sha256-VBA0QerzzmL+4wxgtwiCdiLwLpJg2/9xOxhgO3BRJQA="
+      "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1087755.e7439b6b14ad/nixexprs.tar.xz",
+      "hash": "sha256-gRZ/s8WQJ2CsXdhcDVQH34qxuL0MuMCOs3aBiK1Prsw="
     },
     "torlink-nixpkgs": {
       "type": "Git",

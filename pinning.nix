@@ -25,6 +25,7 @@ in
     torlinkpin = import sources.torlink-nixpkgs { config = config.nixpkgs.config; };
     openrocketpin = import sources.new-openrocket-nixpkgs { config = config.nixpkgs.config; };
     jlconepin = import sources.jlcone-nixpkgs { config = config.nixpkgs.config; };
+    # bambupin = import sources.bambu-nixpkgs { config = config.nixpkgs.config; };
     factorio = pkgs.factorio.override { versionsJson = ./factorio-versions.json; };
   };
 

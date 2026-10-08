@@ -39,6 +39,8 @@
     cine
     tsukimi
     spotify
+    zapfast
+    spotifast
     pbpctrl
     # gqrx
     tor-browser
@@ -150,6 +152,7 @@
     gnomeExtensions.tailscale-status
     gnomeExtensions.custom-command-toggle
     gnomeExtensions.window-calls-extended
+    gnomeExtensions.systemd-manager
 
     openscad-unstable
     ungoogled-chromium
@@ -167,6 +170,7 @@
     rpi-imager
     (callPackage ./ksa.nix { })
     jlconepin.jlcone
+    # bambupin.bambu-studio
     factorio-space-age-experimental
   ];
 
