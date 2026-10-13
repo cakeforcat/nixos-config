@@ -69,8 +69,21 @@
       "type": "Channel",
       "name": "nixos-unstable",
       "artifact": "nixexprs.tar.xz",
-      "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1087755.e7439b6b14ad/nixexprs.tar.xz",
-      "hash": "sha256-gRZ/s8WQJ2CsXdhcDVQH34qxuL0MuMCOs3aBiK1Prsw="
+      "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1090327.7fd4004d0511/nixexprs.tar.xz",
+      "hash": "sha256-0dNcyVeoD61zhucIpt5BAQ+ytd6JzF641Z+A9bgltLo="
+    },
+    "solidcraft-nixpkgs": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "cakeforcat",
+        "repo": "nixpkgs"
+      },
+      "branch": "init-solidcraft",
+      "submodules": false,
+      "revision": "91a4789edcd30f367be2bfde3172c8723c1d6c7e",
+      "url": "https://github.com/cakeforcat/nixpkgs/archive/91a4789edcd30f367be2bfde3172c8723c1d6c7e.tar.gz",
+      "hash": "sha256-kqiEMUGwHoJWjy95b494kuP/Q18Y0UyXr6AzHJZIC/E="
     },
     "torlink-nixpkgs": {
       "type": "Git",

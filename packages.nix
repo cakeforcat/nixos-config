@@ -171,6 +171,7 @@
     (callPackage ./ksa.nix { })
     jlconepin.jlcone
     # bambupin.bambu-studio
+    solidcraftpin.solidcraft
     factorio-space-age-experimental
   ];
 
