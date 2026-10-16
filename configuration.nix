@@ -78,6 +78,9 @@
     kernelModules = [
       "ntsync"
     ];
+    kernelParams = [
+      "plymouth.use-simpledrm"
+    ];
   };
 
   # Networking
