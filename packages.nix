@@ -153,6 +153,7 @@
     gnomeExtensions.custom-command-toggle
     gnomeExtensions.window-calls-extended
     gnomeExtensions.systemd-manager
+    gnomeExtensions.argos
 
     openscad-unstable
     ungoogled-chromium
