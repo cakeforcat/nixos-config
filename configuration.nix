@@ -78,9 +78,6 @@
     kernelModules = [
       "ntsync"
     ];
-    kernelParams = [
-      "plymouth.use-simpledrm"
-    ];
   };
 
   # Networking
@@ -138,60 +135,6 @@
   environment.variables = {
     EDITOR = "nvim";
   };
-
-  environment.etc."geoclue/geoclue.conf".text = lib.mkForce ''
-    [3g]
-    enable=true
-
-    [agent]
-    whitelist=gnome-shell;io.elementary.desktop.agent-geoclue2
-
-    [cdma]
-    enable=true
-
-    [epiphany]
-    allowed=true
-    system=false
-    users=
-
-    [firefox]
-    allowed=true
-    system=false
-    users=
-
-    [gnome-color-panel]
-    allowed=true
-    system=true
-    users=
-
-    [gnome-datetime-panel]
-    allowed=true
-    system=true
-    users=
-
-    [modem-gps]
-    enable=true
-
-    [network-nmea]
-    enable=true
-    nmea-socket=/var/run/gps-share.sock
-
-    [org.gnome.Shell]
-    allowed=true
-    system=true
-    users=
-
-    [static-source]
-    enable=false
-
-    [wifi]
-    enable=true
-    submission-nick=geoclue
-    submission-url=https://api.beacondb.net/v2/geosubmit
-    submit-data=false
-    url=https://api.beacondb.net/v1/geolocate
-
-  '';
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

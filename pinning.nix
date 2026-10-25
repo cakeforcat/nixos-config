@@ -27,6 +27,7 @@ in
     jlconepin = import sources.jlcone-nixpkgs { config = config.nixpkgs.config; };
     # bambupin = import sources.bambu-nixpkgs { config = config.nixpkgs.config; };
     solidcraftpin = import sources.solidcraft-nixpkgs { config = config.nixpkgs.config; };
+    legionmodulepin = import sources.legionmodulefix-nixpkgs { config = config.nixpkgs.config; };
     factorio = pkgs.factorio.override { versionsJson = ./factorio-versions.json; };
   };
 
