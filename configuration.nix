@@ -48,11 +48,11 @@
     '';
   };
 
-  # mdns enable, Note that “files” is always prepended, and “dns” and “myhostname” are always appended.
-  system.nssDatabases.hosts = [
-    "mdns4_minimal"
-    "[NOTFOUND=return]"
-  ];
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+  };
 
   # disable broken sleep
   systemd.sleep.settings.Sleep = {

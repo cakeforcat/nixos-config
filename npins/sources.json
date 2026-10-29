@@ -69,8 +69,8 @@
       "type": "Channel",
       "name": "nixos-unstable",
       "artifact": "nixexprs.tar.xz",
-      "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1100280.3ec636362e18/nixexprs.tar.xz",
-      "hash": "sha256-17eNBI5Khe4JZaRkL5hRGPWf8MZ6qv+bWAr4V8YeKBw="
+      "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1103272.31ecbaca1bde/nixexprs.tar.xz",
+      "hash": "sha256-yXRSdZdZZqccEL+j11lc1gFG1f7V5j8N7oPBTHwf7n4="
     },
     "solidcraft-nixpkgs": {
       "type": "Git",
@@ -81,9 +81,9 @@
       },
       "branch": "init-solidcraft",
       "submodules": false,
-      "revision": "1958aa4c68753f14238af5b183e5c20cca537e0a",
-      "url": "https://github.com/cakeforcat/nixpkgs/archive/1958aa4c68753f14238af5b183e5c20cca537e0a.tar.gz",
-      "hash": "sha256-0FikI8OZeU5aS8CyO/SYmcVUe+uUu8Getuvq+vVbAh8="
+      "revision": "d3ca6e6e7e7f2ceb46038c88baddc91d64865da3",
+      "url": "https://github.com/cakeforcat/nixpkgs/archive/d3ca6e6e7e7f2ceb46038c88baddc91d64865da3.tar.gz",
+      "hash": "sha256-/t9JbsWTiJBLWXkiTu/9e89thzXsqj1d6jflW8krscg="
     },
     "torlink-nixpkgs": {
       "type": "Git",
