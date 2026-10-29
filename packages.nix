@@ -25,6 +25,7 @@
     devenv
     hyfetch
     fastfetch
+    macchina
     ghostty
     fish
     bottom
