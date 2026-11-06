@@ -48,5 +48,13 @@
       );
     })
 
+    (final: prev: {
+      lenovo-legion = prev.lenovo-legion.overrideAttrs (old: {
+        nativeBuildInputs = old.nativeBuildInputs ++ [
+          prev.wrapGAppsHook3
+        ];
+      });
+    })
+
   ];
 }
