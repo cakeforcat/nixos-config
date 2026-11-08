@@ -29,6 +29,8 @@
       enable = true;
       drivers = with pkgs; [
         hplipWithPlugin
+        cups-filters
+        cups-browsed
       ];
     };
 
