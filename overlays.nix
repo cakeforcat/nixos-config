@@ -50,8 +50,26 @@
 
     (final: prev: {
       lenovo-legion = prev.lenovo-legion.overrideAttrs (old: {
-        nativeBuildInputs = old.nativeBuildInputs ++ [
-          prev.wrapGAppsHook3
+        nativeBuildInputs = (old.nativeBuildInputs or [ ]) ++ [
+          final.wrapGAppsHook3
+        ];
+      });
+    })
+
+    (final: prev: {
+      tsukimi = prev.tsukimi.overrideAttrs (old: {
+        nativeBuildInputs = (old.nativeBuildInputs or [ ]) ++ [
+          final.aws-lc
+        ];
+      });
+
+      zapfast = prev.zapfast.overrideAttrs (old: {
+        buildInputs = (old.buildInputs or [ ]) ++ [
+          final.openssl
+          final.sqlcipher
+        ];
+        nativeBuildInputs = (old.nativeBuildInputs or [ ]) ++ [
+          final.pkg-config
         ];
       });
     })
