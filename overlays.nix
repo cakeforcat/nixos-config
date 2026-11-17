@@ -56,23 +56,20 @@
       });
     })
 
-    (final: prev: {
-      tsukimi = prev.tsukimi.overrideAttrs (old: {
-        nativeBuildInputs = (old.nativeBuildInputs or [ ]) ++ [
-          final.aws-lc
-        ];
-      });
+    # (final: prev: {
+    #   tsukimi = prev.tsukimi.overrideAttrs (old: {
+    #     nativeBuildInputs = (old.nativeBuildInputs or [ ]) ++ [
+    #       final.aws-lc
+    #     ];
+    #   });
 
-      zapfast = prev.zapfast.overrideAttrs (old: {
-        buildInputs = (old.buildInputs or [ ]) ++ [
-          final.openssl
-          final.sqlcipher
-        ];
-        nativeBuildInputs = (old.nativeBuildInputs or [ ]) ++ [
-          final.pkg-config
-        ];
-      });
-    })
+    #   zapfast = prev.zapfast.overrideAttrs (old: {
+    #     buildInputs = (old.buildInputs or [ ]) ++ [
+    #       final.openssl
+    #       final.sqlcipher
+    #     ];
+    #   });
+    # })
 
   ];
 }

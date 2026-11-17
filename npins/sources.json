@@ -61,16 +61,16 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "07c41bfdc3b986b7e65e19380b28916e10112c0f",
-      "url": "https://github.com/thiagokokada/nix-alien/archive/07c41bfdc3b986b7e65e19380b28916e10112c0f.tar.gz",
-      "hash": "sha256-3FHVsncGsfcxozcQgHULGkQ6TqXOlguxX6YlBQhQrT8="
+      "revision": "a9d3619774b7508f5d52baa09a4449a61b72c8bc",
+      "url": "https://github.com/thiagokokada/nix-alien/archive/a9d3619774b7508f5d52baa09a4449a61b72c8bc.tar.gz",
+      "hash": "sha256-i2IAZOKp1tEVOhPOl0OBx5gFi/gglJWJUCfwVs4k5es="
     },
     "nixpkgs": {
       "type": "Channel",
       "name": "nixos-unstable",
       "artifact": "nixexprs.tar.xz",
-      "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1113206.f4a03c008967/nixexprs.tar.xz",
-      "hash": "sha256-VZ8WvA9m3XN36juXyg/GwbDRU2OezOHJlXpJCXkccv0="
+      "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1119549.d5cc68339997/nixexprs.tar.xz",
+      "hash": "sha256-bTKSclXJAmo9qdxPedTBHUGr8awPr4BrbOoOutJsYIc="
     },
     "solidcraft-nixpkgs": {
       "type": "Git",
@@ -81,9 +81,9 @@
       },
       "branch": "init-solidcraft",
       "submodules": false,
-      "revision": "64e5c319466bda7a51a27c2bb854332a3cf5230e",
-      "url": "https://github.com/cakeforcat/nixpkgs/archive/64e5c319466bda7a51a27c2bb854332a3cf5230e.tar.gz",
-      "hash": "sha256-etS/v0mSJDjv76TrbJza3p1T9tDNBL9HG0SJ1Vvjbms="
+      "revision": "e96f36218bdad789319d3728bdf47dc3d2250992",
+      "url": "https://github.com/cakeforcat/nixpkgs/archive/e96f36218bdad789319d3728bdf47dc3d2250992.tar.gz",
+      "hash": "sha256-jOv5TLHMGMPRYt1JP+LZTjJFAN699+H3BRITrgYn2V4="
     },
     "torlink-nixpkgs": {
       "type": "Git",
