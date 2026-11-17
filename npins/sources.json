@@ -35,9 +35,9 @@
       },
       "branch": "init-jlcone",
       "submodules": false,
-      "revision": "e2be80de57dd1a3256a32c00bb0822d18d741587",
-      "url": "https://github.com/cakeforcat/nixpkgs/archive/e2be80de57dd1a3256a32c00bb0822d18d741587.tar.gz",
-      "hash": "sha256-0sE+PD4t1e4u+W1mcWLpBR7ZwcmvwhZ6NmUReIXznMo="
+      "revision": "c95a8a98872c6b45e61ccdaccd7cb5dbd4acca37",
+      "url": "https://github.com/cakeforcat/nixpkgs/archive/c95a8a98872c6b45e61ccdaccd7cb5dbd4acca37.tar.gz",
+      "hash": "sha256-b8KJlC0OIZGnCftCgx24W92A7IQOxdz2vivvX9svXpQ="
     },
     "new-openrocket-nixpkgs": {
       "type": "Git",
