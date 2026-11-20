@@ -29,24 +29,24 @@
     #   });
     # })
 
-    (final: prev: {
-      linuxPackages = prev.linuxPackages.extend (
-        final': prev': {
-          lenovo-legion-module = prev'.lenovo-legion-module.overrideAttrs (old: {
-            makeFlags = old.makeFlags ++ [
-              "INSTALL_MOD_PATH=${placeholder "out"}"
-              "DEPMOD=true"
-            ];
-            installTargets = [ "modules_install" ];
-            installFlags = [
-              "-C"
-              "${prev'.kernel.dev}/lib/modules/${prev'.kernel.modDirVersion}/build"
-              "M=$(PWD)"
-            ];
-          });
-        }
-      );
-    })
+    # (final: prev: {
+    #   linuxPackages = prev.linuxPackages.extend (
+    #     final': prev': {
+    #       lenovo-legion-module = prev'.lenovo-legion-module.overrideAttrs (old: {
+    #         makeFlags = old.makeFlags ++ [
+    #           "INSTALL_MOD_PATH=${placeholder "out"}"
+    #           "DEPMOD=true"
+    #         ];
+    #         installTargets = [ "modules_install" ];
+    #         installFlags = [
+    #           "-C"
+    #           "${prev'.kernel.dev}/lib/modules/${prev'.kernel.modDirVersion}/build"
+    #           "M=$(PWD)"
+    #         ];
+    #       });
+    #     }
+    #   );
+    # })
 
     (final: prev: {
       lenovo-legion = prev.lenovo-legion.overrideAttrs (old: {
