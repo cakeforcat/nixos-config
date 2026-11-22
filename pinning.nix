@@ -22,10 +22,7 @@ in
   # programs.command-not-found.dbPath = "/etc/nixos/nixpkgs/programs.sqlite";
 
   nixpkgs.config.packageOverrides = pkgs: {
-    torlinkpin = import sources.torlink-nixpkgs { config = config.nixpkgs.config; };
-    openrocketpin = import sources.new-openrocket-nixpkgs { config = config.nixpkgs.config; };
     jlconepin = import sources.jlcone-nixpkgs { config = config.nixpkgs.config; };
-    # bambupin = import sources.bambu-nixpkgs { config = config.nixpkgs.config; };
     solidcraftpin = import sources.solidcraft-nixpkgs { config = config.nixpkgs.config; };
     legionmodulepin = import sources.legionmodulefix-nixpkgs { config = config.nixpkgs.config; };
     factorio = pkgs.factorio.override { versionsJson = ./factorio-versions.json; };

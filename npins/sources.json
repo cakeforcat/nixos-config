@@ -1,18 +1,5 @@
 {
   "pins": {
-    "bambu-nixpkgs": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "joaosreis",
-        "repo": "nixpkgs"
-      },
-      "branch": "bambu-studio",
-      "submodules": false,
-      "revision": "8fc98593fff4904c36939264cd8c9e65b1b3a930",
-      "url": "https://github.com/joaosreis/nixpkgs/archive/8fc98593fff4904c36939264cd8c9e65b1b3a930.tar.gz",
-      "hash": "sha256-UjvZCWW35W0lYm9o5nlm2TlDbDLtrVv1qWnSTq1YP/0="
-    },
     "custom-nixos-hardware": {
       "type": "Git",
       "repository": {
@@ -39,19 +26,6 @@
       "url": "https://github.com/cakeforcat/nixpkgs/archive/c95a8a98872c6b45e61ccdaccd7cb5dbd4acca37.tar.gz",
       "hash": "sha256-b8KJlC0OIZGnCftCgx24W92A7IQOxdz2vivvX9svXpQ="
     },
-    "new-openrocket-nixpkgs": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "tree-sapii",
-        "repo": "nixpkgs"
-      },
-      "branch": "openrocket_update",
-      "submodules": false,
-      "revision": "6704a346c053a5b8a52c39d02fe71cf460953244",
-      "url": "https://github.com/tree-sapii/nixpkgs/archive/6704a346c053a5b8a52c39d02fe71cf460953244.tar.gz",
-      "hash": "sha256-0FdxfkH5Eg1WGG9LFQyQQV243hIiqtRptkgwjZE0y1E="
-    },
     "nix-alien": {
       "type": "Git",
       "repository": {
@@ -69,8 +43,8 @@
       "type": "Channel",
       "name": "nixos-unstable",
       "artifact": "nixexprs.tar.xz",
-      "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1124497.0bb8272318b4/nixexprs.tar.xz",
-      "hash": "sha256-kqy60mdSH4GQAv3kzSeefteaiCv9arf3P+auosZrpo0="
+      "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1125864.2786a2a72088/nixexprs.tar.xz",
+      "hash": "sha256-pAEASBc6wof0S58XcSEdZoQ2iFQDkCnZwH+wFLrkd1Q="
     },
     "solidcraft-nixpkgs": {
       "type": "Git",
@@ -84,19 +58,6 @@
       "revision": "48455a19661436feba546b5275bf2e5780ac6dff",
       "url": "https://github.com/cakeforcat/nixpkgs/archive/48455a19661436feba546b5275bf2e5780ac6dff.tar.gz",
       "hash": "sha256-3jGtP6B/btw3ISyQiKoVT/Jzkp3RMnvI6M5/wRLfXUo="
-    },
-    "torlink-nixpkgs": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "cakeforcat",
-        "repo": "nixpkgs"
-      },
-      "branch": "init-torlink",
-      "submodules": false,
-      "revision": "ce782f16cd11887d9fa8fac011e14abd2fe55ed5",
-      "url": "https://github.com/cakeforcat/nixpkgs/archive/ce782f16cd11887d9fa8fac011e14abd2fe55ed5.tar.gz",
-      "hash": "sha256-gAx7zqVsE3ZPWT8X1So9iRSXfv1SIG9zwUWxHtTiYAY="
     }
   },
   "version": 8

@@ -53,8 +53,8 @@
     proton-vpn-cli
     wireguard-tools
     geteduroam
-    # openrocketpin.openrocket
-    torlinkpin.torlink
+    openrocket
+    tork
 
     zed-editor
     (vscode-with-extensions.override {
@@ -161,7 +161,6 @@
     mommy
     heroic
     diebahn
-    #unstable.mission-center
     # (gnuradio.override {
     #   extraPackages = with gnuradioPackages; [
     #     lora_sdr
@@ -172,7 +171,6 @@
     rpi-imager
     (callPackage ./ksa.nix { })
     jlconepin.jlcone
-    # bambupin.bambu-studio
     solidcraftpin.solidcraft
     factorio-space-age-experimental
   ];
