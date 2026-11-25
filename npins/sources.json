@@ -55,9 +55,9 @@
       },
       "branch": "init-solidcraft",
       "submodules": false,
-      "revision": "f7f8b8cc57b5ee664744fd03dbcf64d911724f29",
-      "url": "https://github.com/cakeforcat/nixpkgs/archive/f7f8b8cc57b5ee664744fd03dbcf64d911724f29.tar.gz",
-      "hash": "sha256-zAz4h5VE/5neopt321vR40FRbu4tVEk2vXIOPVerKHM="
+      "revision": "16ce525096909651ac63454041b6b1c1b297874e",
+      "url": "https://github.com/cakeforcat/nixpkgs/archive/16ce525096909651ac63454041b6b1c1b297874e.tar.gz",
+      "hash": "sha256-CsfsHw1QxNnhgN842iu/a0eoXGYQRJ6dzOVkYmP50t4="
     }
   },
   "version": 8
